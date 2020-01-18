@@ -13,7 +13,7 @@ class Restart extends Command {
             await msg.addReaction('👍');
             process.exit();
         }
-    };
-};
+    }
+}
 
 module.exports = Restart;

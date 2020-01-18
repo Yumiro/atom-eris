@@ -36,8 +36,8 @@ class Eval extends Command {
                     return;
                 };
             };
-        };
-    };
-};
+        }
+    }
+}
 
 module.exports = Eval;
