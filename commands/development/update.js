@@ -20,7 +20,7 @@ class Update extends Command {
                     console.error(err);
                     msg.channel.createMessage(`${this.bot.emojiList.error} Something went wrong. Check the console for any errors.`);
                 } else {
-                    msg.channel.createMessage(`${this.bot.emojiList.check} I am now up to date test!.`);
+                    msg.channel.createMessage(`${this.bot.emojiList.check} I am now up to date.`);
                     console.log(stdout);
                 };
             });
