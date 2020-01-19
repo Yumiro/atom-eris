@@ -17,8 +17,12 @@ class Unmute extends Command {
             if (user) {
                 if (role) {
                     if (msg.member.permission.has('manageRoles')) {
-                        msg.channel.guild.members.find(f => f.id === user.id).removeRole(role.id, reason);
-                        msg.channel.createMessage(`${this.bot.emojiList.check} Successfully unmuted ${user.mention}.`);
+                        if (!msg.guild.users.find(f => f.id === user.id).roles.find(f => f.id === role.id)) {
+                            msg.channel.guild.members.find(f => f.id === user.id).removeRole(role.id, reason);
+                            msg.channel.createMessage(`${this.bot.emojiList.check} Successfully unmuted ${user.mention}.`);
+                        } else {
+                            msg.channel.createMessage(`${this.bot.emojiList.error} This user isn't muted.`);
+                        };
                     } else {
                         msg.channel.createMessage(`${this.bot.emojiList.error} You don't have the \`Manage Roles\` permission.`);
                     };
