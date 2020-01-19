@@ -6,7 +6,7 @@ class Mute extends Command {
             name: 'mute',
             description: 'Mutes a member in the guild',
             category: '🔨 Moderation',
-            aliases: ['m', 'shut'],
+            aliases: ['m', 'shut', 'silence'],
             usage: 'mute <user> [reason]'
         })
         this.run = async (msg, args) => {
