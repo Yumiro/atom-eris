@@ -3,10 +3,10 @@ class Dick extends Command {
     constructor(bot) {
         super(bot, {
             name: 'dick',
-            description: 'Checks your dick size',
+            description: 'Displays the size of your dick, or a specific user',
             category: '😂 Fun',
             aliases: ['pp', 'cock'],
-            usage: 'dick'
+            usage: 'dick [user]'
         })
         this.run = async (msg) => {
             const user = msg.mentions[0] || msg.author;
