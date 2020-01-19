@@ -3,7 +3,7 @@ class Avatar extends Command {
     constructor(bot) {
         super(bot, {
             name: 'avatar',
-            description: 'View the avatar of yourself, or a specific user',
+            description: 'Displays your avatar, or a specific user\'s one',
             category: '❔ Information',
             aliases: ['av', 'pfp'],
             usage: 'avatar [user]'
