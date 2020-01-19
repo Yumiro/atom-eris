@@ -3,7 +3,7 @@ class Dick extends Command {
     constructor(bot) {
         super(bot, {
             name: 'dick',
-            description: 'Displays your dick\'s size, or a specific user\'s',
+            description: 'Sends your dick\'s size, or a specific user\'s one',
             category: '😂 Fun',
             aliases: ['pp', 'cock'],
             usage: 'dick [user]'
