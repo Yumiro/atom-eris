@@ -9,7 +9,8 @@ class Dick extends Command {
             usage: 'dick'
         })
         this.run = async (msg) => {
-            const size = msg.mentions[0].id.slice(-3) % 20 + 1 || msg.author.id.slice(-3) % 20 + 1;
+            const user = msg.mentions[0] || msg.author;
+            const size = user.id.slice(-3) % 20 + 1;
 
             msg.channel.createMessage({
                 embed: {
