@@ -36,7 +36,7 @@ class Status extends Command {
                             inline: true
                         },
                         {
-                            name: this.bot.emojiList.presence + ' Servers',
+                            name: this.bot.emojiList.invite + ' Servers',
                             value: this.bot.guilds.size,
                             inline: true
                         },
