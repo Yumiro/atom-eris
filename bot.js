@@ -40,7 +40,17 @@ bot.versionIMG = 'https://vignette.wikia.nocookie.net/azure-mines/images/4/43/Ab
 bot.emojiList = {
     'bell': '<a:abell:486584452600954890>',
     'check': '<:check:657238794499784735>',
-    'error': '<:error:657238794461904916>'
+    'error': '<:error:657238794461904916>',
+    'mute': '<:muted:675777457059659802>',
+    'unmute': '<:unmuted:675777457118248960>',
+    'members': '<:members:675777456833298472>',
+    'settings': '<:settings:675777457076436993>',
+    'verify': '<:verified:675777457428889629>',
+    'invite': '<:invite:675777456912859156>',
+    'mention': '<:mention:675777456963059723>',
+    'news': '<:news:675777457105797124>',
+    'presence': '<:rich_presence:675777457139220500>',
+    'time': '<:slowmode:675782310318178310>'
 };
 
 global.firstUpper = function firstUpper(string) {

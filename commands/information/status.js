@@ -21,32 +21,32 @@ class Status extends Command {
                     },
                     fields: [
                         {
-                            name: 'Memory Usage',
+                            name: this.bot.emojiList.presence + ' Memory Usage',
                             value: (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2) + 'MB',
                             inline: true
                         },
                         {
-                            name: 'Uptime',
+                            name: this.bot.emojiList.time + ' Uptime',
                             value: duration(bot.uptime).format('D[d] H[h] m[m] s[s]'),
                             inline: true
                         },
                         {
-                            name: 'Commands',
+                            name: this.bot.emojiList.presence + ' Commands',
                             value: this.bot.commands.size,
                             inline: true
                         },
                         {
-                            name: 'Servers',
+                            name: this.bot.emojiList.presence + ' Servers',
                             value: this.bot.guilds.size,
                             inline: true
                         },
                         {
-                            name: 'Users',
+                            name: this.bot.emojiList.members + ' Users',
                             value: this.bot.users.size,
                             inline: true
                         },
                         {
-                            name: 'Version',
+                            name: this.bot.emojiList.settings + ' Version',
                             value: this.bot.version,
                             inline: true
                         }
