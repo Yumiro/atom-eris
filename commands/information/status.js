@@ -14,14 +14,13 @@ class Status extends Command {
             msg.channel.createMessage({
                 embed: {
                     color: 0x36393f,
-                    title: 'Bot Status',
                     footer: {
                         text: msg.channel.guild.name,
                         icon_url: this.bot.versionIMG
                     },
                     fields: [
                         {
-                            name: this.bot.emojiList.presence + ' Memory Usage',
+                            name: this.bot.emojiList.stream + ' Memory Usage',
                             value: (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2) + 'MB',
                             inline: true
                         },
