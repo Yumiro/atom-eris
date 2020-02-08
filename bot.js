@@ -50,7 +50,8 @@ bot.emojiList = {
     'mention': '<:mention:675777456963059723>',
     'news': '<:news:675777457105797124>',
     'presence': '<:rich_presence:675777457139220500>',
-    'time': '<:slowmode:675782310318178310>'
+    'time': '<:slowmode:675782310318178310>',
+    'stream': '<:stream:675783964371320842>'
 };
 
 global.firstUpper = function firstUpper(string) {
