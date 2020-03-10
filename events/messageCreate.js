@@ -7,6 +7,9 @@ class messageCreate {
         if(await this.bot.userDB.countDocuments({"_id": msg.author.id}, {limit: 1}).then(r => r === 0)) {
             this.bot.userDB.insertOne({"_id": msg.author.id, level: null, xp: null})   
         }
+        if(await this.bot.guildDB.countDocuments({"_id": msg.channel.guild.id}, {limit: 1}).then(r => r === 0)) {
+            this.bot.userDB.insertOne({"_id": msg.channel.guild.id, loggingChannel: null})   
+        }
         if (msg.content.startsWith(require('../config').prefix)) {
             // const command = msg.content.split(' ')[0].slice(2).toLowerCase();
             const args = msg.content.slice(require('../config').prefix.length).split(' ');
