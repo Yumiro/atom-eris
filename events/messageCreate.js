@@ -1,3 +1,5 @@
+const UserSchema = require("../Schemas/user");
+const GuildSchema = require("../Schemas/guild");
 class messageCreate {
     constructor(bot) {
         this.bot = bot
@@ -5,10 +7,10 @@ class messageCreate {
     async run(msg) {
         if (msg.author.bot || msg.channel.type === 'dm') return;
         if(await this.bot.userDB.countDocuments({"_id": msg.author.id}, {limit: 1}).then(r => r === 0)) {
-            this.bot.userDB.insertOne({"_id": msg.author.id, level: null, xp: null})   
+            this.bot.userDB.insertOne(UserSchema(msg.author))   
         }
         if(await this.bot.guildDB.countDocuments({"_id": msg.channel.guild.id}, {limit: 1}).then(r => r === 0)) {
-            this.bot.guildDB.insertOne({"_id": msg.channel.guild.id, loggingChannel: null})   
+            this.bot.guildDB.insertOne(GuildSchema(msg.channel.guild))   
         }
         if (msg.content.startsWith(require('../config').prefix)) {
             // const command = msg.content.split(' ')[0].slice(2).toLowerCase();
