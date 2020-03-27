@@ -14,7 +14,7 @@ class COVID extends Command {
             if (args[0]) {
                 try {
                     const result = await fetch("https://corona.lmao.ninja/countries/" + args.join("%20").toLowerCase()).then((res) => res.json());
-                    return {
+                    msg.channel.createMessage({
                         embed: {
                             color: parseInt("877EEB", 16),
                             title: `COVID-19 Statistics for ${result.country}`,
@@ -42,18 +42,18 @@ class COVID extends Command {
                                 }
                             ]
                         }
-                    };
+                    });
                 } catch (e) {
-                    return {
+                    msg.channel.createMessage({
                         embed: {
                             color: 0x36393f,
                             description: `${bot.emojiList.error} Couldn't find the country you were looking for.`
                         }
-                    };
+                    });
                 };
             } else {
                 const result = await fetch("https://corona.lmao.ninja/all").then((res) => res.json());
-                return {
+                msg.channel.createMessage({
                     embed: {
                         color: 0x36393f,
                         title: "COVID-19 Global Statistics",
@@ -71,7 +71,7 @@ class COVID extends Command {
                             inline: true
                         }],
                     }
-                };
+                });
             };
         };
     };
