@@ -13,7 +13,7 @@ class Help extends Command {
                 const embed = {
                     "embed": {
                         "title": 'Help',
-                        "color": 0x36393f,
+                        "color": bot.embedCOLOR,
                         "footer": {
                             "text": msg.channel.guild.name
                         },
@@ -55,7 +55,7 @@ class Help extends Command {
 
                 const embed = {
                     "embed": {
-                        "color": 0x36393f,
+                        "color": bot.embedCOLOR,
                         "footer": {
                             "text": '<> = Required • [] = Optional'
                         },

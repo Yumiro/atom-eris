@@ -16,7 +16,7 @@ class COVID extends Command {
                     const result = await fetch("https://corona.lmao.ninja/countries/" + args.join("%20").toLowerCase()).then((res) => res.json());
                     msg.channel.createMessage({
                         embed: {
-                            color: 0x36393f,
+                            color: bot.embedCOLOR,
                             title: `COVID-19 Statistics for ${result.country}`,
                             fields: [{
                                     name: "Total Cases",

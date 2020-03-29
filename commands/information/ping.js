@@ -11,7 +11,7 @@ class Ping extends Command {
         this.run = async (msg) => {
             msg.channel.createMessage({
                 embed: {
-                    color: 0x36393f,
+                    color: bot.embedCOLOR,
                     description: `⌛ ${this.bot.shards.get(0).latency}ms`
                 }
             });

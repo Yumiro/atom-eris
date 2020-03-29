@@ -14,7 +14,7 @@ class Dick extends Command {
 
             msg.channel.createMessage({
                 embed: {
-                    color: 0x36393f,
+                    color: bot.embedCOLOR,
                     title: size + 'cm',
                     description: 8 + '='.repeat(size) + 'D'
                 }

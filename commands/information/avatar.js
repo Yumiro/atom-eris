@@ -13,7 +13,7 @@ class Avatar extends Command {
 
             msg.channel.createMessage({
                 embed: {
-                    color: 0x36393f,
+                    color: bot.embedCOLOR,
                     author: {
                         name: user.username + '\'s ' + 'Avatar',
                         url: user.dynamicAvatarURL('jpg', '2048') || user.defaultAvatarURL

@@ -37,7 +37,7 @@ class Guild extends Command {
 
             msg.channel.createMessage({
                 embed: {
-                    color: 0x36393f,
+                    color: bot.embedCOLOR,
                     author: {
                         name: msg.channel.guild.name
                     },

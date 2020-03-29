@@ -12,7 +12,7 @@ class Roles extends Command {
             const roles = msg.channel.guild.roles.map(f => f.id).slice(1).sort();
             msg.channel.createMessage({
                 embed: {
-                    color: 0x36393f,
+                    color: bot.embedCOLOR,
                     description: '**<@&' + roles.join('>** **<@&') + '>**'
                 }
             });

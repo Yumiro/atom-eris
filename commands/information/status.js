@@ -13,7 +13,7 @@ class Status extends Command {
         this.run = async (msg) => {
             msg.channel.createMessage({
                 embed: {
-                    color: 0x36393f,
+                    color: bot.embedCOLOR,
                     footer: {
                         text: msg.channel.guild.name,
                         icon_url: this.bot.versionIMG
