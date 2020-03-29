@@ -9,18 +9,14 @@ class QR extends Command {
             usage: 'qrcode [text]'
         })
         this.run = async (msg, args) => {
-            if (args) {
-                msg.channel.createMessage({
-                    embed: {
-                        color: bot.embedCOLOR,
-                        image: {
-                            url: `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(args)}`
-                        }
+            msg.channel.createMessage({
+                embed: {
+                    color: bot.embedCOLOR,
+                    image: {
+                        url: `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(args)}`
                     }
-                });
-            } else {
-                msg.channel.createMessage(`${bot.emojiList.error} No text specified.`);
-            };
+                }
+            });
         };
     };
 };
