@@ -18,7 +18,9 @@ class QR extends Command {
                         }
                     }
                 });
-            }
+            } else {
+                msg.channel.createMessage(`${bot.emojiList.error} No text specified.`);
+            };
         };
     };
 };
