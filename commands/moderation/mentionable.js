@@ -20,8 +20,6 @@ class Mentionable extends Command {
                     });
 
                     msg.channel.createMessage(`${bot.emojiList.check} Successfully made **${role.name}** mentionable.`);
-                } else {
-                    msg.channel.createMessage(`${bot.emojiList.error} Role not found.`);
                 };
 
                 if (msg.content.includes('false') && role) {
@@ -30,8 +28,6 @@ class Mentionable extends Command {
                     });
 
                     msg.channel.createMessage(`${bot.emojiList.check} Successfully made **${role.name}** unmentionable.`);
-                } else {
-                    msg.channel.createMessage(`${bot.emojiList.error} Role not found.`);
                 };
             };
         };
