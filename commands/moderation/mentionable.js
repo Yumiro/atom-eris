@@ -12,7 +12,7 @@ class Mentionable extends Command {
             if (!msg.member.permission.has('manageRoles')) {
                 msg.channel.createMessage(`${bot.emojiList.error} You don't have the \`Manage Roles\` permission.`);
             } else {
-                const role = msg.guild.roles.find(f => f.name === args.slice(1).join(' '));
+                const role = msg.channel.guild.roles.find(f => f.name === args.slice(1).join(' '));
 
                 if (msg.content.includes('true') && role) {
                     role.edit({
