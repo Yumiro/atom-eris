@@ -4,6 +4,7 @@ class messageDelete {
     }
     async run(msg) {
         const channel = this.bot.guilds.find(f => f.name === 'atom/dev').channels.find(f => f.id === '613783535630680076');
+        console.log(msg.author)
 
         if (msg.author.bot) {
             return;
