@@ -9,7 +9,7 @@ class guildCreate {
         if (guild.members.get(this.bot.user.id).permission.has('sendMessages')) {
             this.bot.createMessage(guild.systemChannelID, {
                 embed: {
-                    color: bot.embedCOLOR,
+                    color: this.bot.embedCOLOR,
                     title: guild.name,
                     footer: {
                         text: this.bot.version,
