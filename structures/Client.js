@@ -1,5 +1,5 @@
 const Eris = require('eris');
-const config = require("../../config.json")
+const config = require("../config.json");
 const { MongoClient } = require("mongodb");
 class client extends Eris {
     constructor(options) {
