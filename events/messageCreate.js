@@ -25,7 +25,7 @@ class messageCreate {
             if (this.bot.commands.has(command) || this.bot.commands.has(this.bot.aliases.get(command))) {
                 const cmd = this.bot.commands.get(command) || this.bot.commands.get(this.bot.aliases.get(command))
                 if (!require('../config').developers.includes(msg.author.id) && cmd.config.developer) {
-                    msg.channel.createMessage('You do not have permission to run that command!')
+                    msg.channel.createMessage(`${bot.emojiList.error} You're not a Developer.`)
                 } else {
                     cmd.run(msg, args);
                 }

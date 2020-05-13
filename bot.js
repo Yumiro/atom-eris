@@ -1,4 +1,4 @@
-const config = require('./config');
+const config = require('./config.json');
 const Client = require("./structures/Client");
 const bot = new Client(config.token);
 const {
