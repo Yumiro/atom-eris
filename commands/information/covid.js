@@ -13,7 +13,7 @@ class COVID extends Command {
         this.run = async (msg, args) => {
             if (args[0]) {
                 try {
-                    const result = await fetch("https://corona.lmao.ninja/v2/countries/" + args.join("%20").toLowerCase()).then((res) => res.json());
+                    const result = await fetch("https://disease.sh/v2/countries/" + args.join("%20").toLowerCase()).then((res) => res.json());
                     msg.channel.createMessage({
                         embed: {
                             color: bot.embedCOLOR,
@@ -52,7 +52,7 @@ class COVID extends Command {
                     });
                 };
             } else {
-                const result = await fetch("https://corona.lmao.ninja/all").then((res) => res.json());
+                const result = await fetch("https://disease.sh/v2/all").then((res) => res.json());
                 msg.channel.createMessage({
                     embed: {
                         color: 0x36393f,
