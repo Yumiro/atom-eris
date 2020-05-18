@@ -13,7 +13,7 @@ class COVID extends Command {
         this.run = async (msg, args) => {
             if (args[0]) {
                 try {
-                    const result = await fetch("https://corona.lmao.ninja/countries/" + args.join("%20").toLowerCase()).then((res) => res.json());
+                    const result = await fetch("https://corona.lmao.ninja/v2/countries/" + args.join("%20").toLowerCase()).then((res) => res.json());
                     msg.channel.createMessage({
                         embed: {
                             color: bot.embedCOLOR,
