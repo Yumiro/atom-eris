@@ -11,13 +11,14 @@
   "license": "ISC",
   "dependencies": {
     "axoncore": "^1.1.1",
-    "eris": "^0.11.2",
+    "eris": "^0.13.1",
     "minimist": "^1.2.5",
-    "moment": "^2.24.0",
+    "moment": "^2.26.0",
     "moment-duration-format": "^2.3.2",
+    "mongodb": "^3.5.7",
     "ms": "^2.1.2",
     "node-fetch": "^2.6.0",
     "node-superfetch": "^0.1.10",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.4"
   }
 }
