@@ -10,13 +10,11 @@ class Bans extends Command {
         })
         this.run = async (msg) => {
             msg.channel.guild.getBans().then(b => {
-                let bans;
-                b.length === 1 ? "ban" : "bans"
 
                 msg.channel.createMessage({
                     embed: {
                         color: bot.embedCOLOR,
-                        description: `🔨 This server has ${b.length} ${bans}`,
+                        description: `🔨 This server has ${b.length} ${b.length === 1 ? "ban" : "bans"}`,
                         footer: {
                             text: msg.channel.guild.name
                         }
