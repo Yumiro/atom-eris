@@ -17,7 +17,7 @@ class guildRoleDelete {
                     inline: true
                 }, {
                     name: 'Color',
-                    value: role.color.toString(16),
+                    value: '#' + role.color.toString(16),
                     inline: true
                 }, {
                     name: 'ID',

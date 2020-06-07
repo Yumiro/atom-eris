@@ -15,7 +15,7 @@ class Kick extends Command {
             if (user) {
                 if (msg.member.permission.has('kickMembers')) {
                     if (!msg.channel.guild.members.find(f => f.id === user.id).permission.has('kickMembers')) {
-                        msg.channel.guild.kickMember(user, reason);
+                        msg.channel.guild.kickMember(user.id, reason);
                         msg.channel.createMessage(`${this.bot.emojiList.check} Successfully kicked ${user.mention}.`);
                     } else {
                         msg.channel.createMessage(`${this.bot.emojiList.error} This user has the \`Kick Members\` permission.`);
