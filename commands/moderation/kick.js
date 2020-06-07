@@ -8,26 +8,26 @@ class Kick extends Command {
             aliases: ['k'],
             usage: 'kick <user> [reason]'
         })
-        this.run = async (msg, args) => {
+        this.run = async (msg) => {
             const user = msg.mentions[0];
-            const reason = `[${msg.author.username}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(2).join(' ') || 'kick command issued'}`;
+            const reason = `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(2).join(' ') || 'kick command issued (no reason given)'}`;
 
-            if (user) {
-                if (msg.member.permission.has('kickMembers')) {
+            if (!msg.member.permission.has('kickMembers')) {
+                msg.channel.createMessage(`${this.bot.emojiList.error} You don't have the \`Kick Members\` permission.`);
+            } else {
+                if (user) {
                     if (!msg.channel.guild.members.find(f => f.id === user.id).permission.has('kickMembers')) {
-                        msg.channel.guild.kickMember(user, reason);
+                        msg.channel.guild.kickMember(user.id, reason);
                         msg.channel.createMessage(`${this.bot.emojiList.check} Successfully kicked ${user.mention}.`);
                     } else {
                         msg.channel.createMessage(`${this.bot.emojiList.error} This user has the \`Kick Members\` permission.`);
                     }
                 } else {
-                    msg.channel.createMessage(`${this.bot.emojiList.error} You don't have the \`Kick Members\` permission.`);
+                    msg.channel.createMessage(`${this.bot.emojiList.error} User not found.`);
                 };
-            } else {
-                msg.channel.createMessage(`${this.bot.emojiList.error} User not found.`);
             };
-        }
-    }
-}
+        };
+    };
+};
 
-module.exports = Kick;
+    module.exports = Kick;

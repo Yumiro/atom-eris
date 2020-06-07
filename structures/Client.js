@@ -14,4 +14,3 @@ class client extends Eris {
 };
 
 module.exports = client;
-// mongodb://Oly:123zserdxcft@157.230.232.81:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false

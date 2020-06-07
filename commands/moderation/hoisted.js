@@ -1,12 +1,12 @@
 const Command = require('../../structures/Command');
-class Mentionable extends Command {
+class Hoisted extends Command {
     constructor(bot) {
         super(bot, {
-            name: 'mentionable',
-            description: 'Sets the specified role mentionable or not mentionable',
+            name: 'hoisted',
+            description: 'Sets the specified role hoisted or not hoisted',
             category: '🔨 Moderation',
-            aliases: ['set-mentionable', 'setmentionable'],
-            usage: 'mentionable [true|false] [role name]'
+            aliases: ['set-hoisted', 'sethoisted'],
+            usage: 'hoisted [true|false] [role name]'
         });
         this.run = async (msg, args) => {
             if (!msg.member.permission.has('manageRoles')) {
@@ -16,22 +16,22 @@ class Mentionable extends Command {
 
                 if (msg.content.includes('true') && role) {
                     role.edit({
-                        mentionable: true
+                        hoist: true
                     });
 
-                    msg.channel.createMessage(`${bot.emojiList.check} Successfully made **${role.name}** mentionable.`);
+                    msg.channel.createMessage(`${bot.emojiList.check} Successfully made **${role.name}** hoisted.`);
                 };
 
                 if (msg.content.includes('false') && role) {
                     role.edit({
-                        mentionable: false
+                        hoist: false
                     });
 
-                    msg.channel.createMessage(`${bot.emojiList.check} Successfully made **${role.name}** unmentionable.`);
+                    msg.channel.createMessage(`${bot.emojiList.check} Successfully made **${role.name}** not hoisted.`);
                 };
             };
         };
     };
 };
 
-module.exports = Mentionable;
+module.exports = Hoisted;

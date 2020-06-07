@@ -1,15 +1,17 @@
+const ms = require('ms');
 const Command = require('../../structures/Command');
-class Mute extends Command {
+class tempMute extends Command {
     constructor(bot) {
         super(bot, {
-            name: 'mute',
-            description: 'Mutes a member in the guild',
+            name: 'tempmute',
+            description: 'Temporarily mutes a member in the guild',
             category: '🔨 Moderation',
-            aliases: ['m', 'shut', 'silence'],
-            usage: 'mute <user> [reason]'
+            aliases: ['tm', 'temp-mute', 'temporarymute', 'temporary-mute', 'temp-shut', 'tempshut'],
+            usage: 'tempmute <user> <time> [reason]'
         })
         this.run = async (msg, args) => {
             const user = msg.mentions[0] || msg.channel.guild.members.find(f => f.id === args[0]);
+            const time = ms(args[1]);
             const reason = `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(3).join(' ') || 'mute command issued (no reason given)'}`;
             let role = msg.channel.guild.roles.find(f => f.name === 'Muted' || f.name === 'muted');
 
@@ -18,9 +20,14 @@ class Mute extends Command {
             } else {
                 if (user) {
                     if (!msg.channel.guild.members.find(f => f.id === user.id).permission.has('manageRoles')) {
+                        if (time !== undefined) {
                             if (role) {
                                 msg.channel.guild.members.find(f => f.id === user.id).addRole(role.id, reason);
-                                msg.channel.createMessage(`${this.bot.emojiList.mute} ${user.mention} has been muted.`);
+                                msg.channel.createMessage(`${this.bot.emojiList.mute} ${user.mention} has been muted for ${args[1]}.`).then(() => {
+                                    setTimeout(function () {
+                                        msg.channel.guild.members.find(f => f.id === user.id).removeRole(role.id, 'auto unmute');
+                                    }, time);
+                                });
                             } else {
                                 try {
                                     msg.channel.createMessage(`${this.bot.emojiList.error} \`Muted\` role not found. Creating one...`).then(m => m.delete(1500));
@@ -36,11 +43,18 @@ class Mute extends Command {
                                     });
                                     msg.channel.createMessage(`${this.bot.emojiList.check} Successfully created the \`Muted\` role.`).then(m => m.delete(2000));
                                     msg.channel.guild.members.find(f => f.id === user.id).addRole(role.id, reason);
-                                    msg.channel.createMessage(`${this.bot.emojiList.mute} ${user.mention} has been muted.`);
+                                    msg.channel.createMessage(`${this.bot.emojiList.mute} ${user.mention} has been muted for ${args[1]}.`).then(() => {
+                                        setTimeout(function () {
+                                            msg.channel.guild.members.find(f => f.id === user.id).removeRole(role.id, 'auto unmute');
+                                        }, time);
+                                    });
                                 } catch (e) {
                                     console.log(e);
                                 };
                             };
+                        } else {
+                            msg.channel.createMessage(`${this.bot.emojiList.error} Please specify a valid time. Example: \`10s\`, \`30m\`, \`24h\``)
+                        };
                     } else {
                         msg.channel.createMessage(`${this.bot.emojiList.error} You don't have the \`Manage Roles\` permission.`);
                     };
@@ -52,4 +66,4 @@ class Mute extends Command {
     };
 };
 
-module.exports = Mute;
+module.exports = tempMute;

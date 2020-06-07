@@ -10,24 +10,24 @@ class Ban extends Command {
         })
         this.run = async (msg, args) => {
             const user = msg.mentions[0];
-            const reason = `[${msg.author.username}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(2).join(' ') || 'ban command issued'}`;
+            const reason = `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(2).join(' ') || 'ban command issued (no reason given)'}`;
 
-            if (user) {
-                if (msg.member.permission.has('banMembers')) {
+            if (!msg.member.permission.has('banMembers')) {
+                msg.channel.createMessage(`${this.bot.emojiList.error} You don't have the \`Ban Members\` permission.`);
+            } else {
+                if (user) {
                     if (!msg.channel.guild.members.find(f => f.id === user.id).permission.has('banMembers')) {
-                        msg.channel.guild.banMember(user, 0, reason);
+                        msg.channel.guild.banMember(user.id, 0, reason);
                         msg.channel.createMessage(`${this.bot.emojiList.check} Successfully banned ${user.mention}.`);
                     } else {
                         msg.channel.createMessage(`${this.bot.emojiList.error} This user has the \`Ban Members\` permission.`);
                     }
                 } else {
-                    msg.channel.createMessage(`${this.bot.emojiList.error} You don't have the \`Ban Members\` permission.`);
+                    msg.channel.createMessage(`${this.bot.emojiList.error} User not found.`);
                 };
-            } else {
-                msg.channel.createMessage(`${this.bot.emojiList.error} User not found.`);
             };
-        }
-    }
-}
+        };
+    };
+};
 
 module.exports = Ban;
