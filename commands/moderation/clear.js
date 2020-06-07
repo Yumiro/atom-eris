@@ -14,11 +14,7 @@ class Clear extends Command {
                         await msg.delete().then(() => {
                             msg.channel.purge(args);
                         });
-                        msg.channel.createMessage(`${this.bot.emojiList.check} Successfully cleared ${args} messages.`).then(m => {
-                            setTimeout(function() {
-                                m.delete()
-                            }, 1000);
-                        });
+                        msg.channel.createMessage(`${this.bot.emojiList.check} Successfully cleared ${args} messages.`).then(m => m.delete(2000));
                 } else {
                     msg.channel.createMessage(`${this.bot.emojiList.error} You don't have the \`Manage Messages\` permission.`);
                 };

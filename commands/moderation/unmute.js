@@ -11,25 +11,25 @@ class Unmute extends Command {
         })
         this.run = async (msg) => {
             const user = msg.mentions[0];
-            const reason = `[${msg.author.username}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(2).join(' ') || 'unmute command issued'}`;
+            const reason = `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(2).join(' ') || 'unmute command issued (no reason given)'}`;
             let role = msg.channel.guild.roles.find(f => f.name === 'Muted' || f.name === 'muted');
 
-            if (user) {
-                if (role) {
-                    if (msg.member.permission.has('manageRoles')) {
+            if (!msg.member.permission.has('manageRoles')) {
+                msg.channel.createMessage(`${this.bot.emojiList.error} You don't have the \`Manage Roles\` permission.`);
+            } else {
+                if (user) {
+                    if (role) {
                         msg.channel.guild.members.find(f => f.id === user.id).removeRole(role.id, reason);
                         msg.channel.createMessage(`${this.bot.emojiList.unmute} ${user.mention} has been unmuted.`);
                     } else {
-                        msg.channel.createMessage(`${this.bot.emojiList.error} You don't have the \`Manage Roles\` permission.`);
+                        msg.channel.createMessage(`${this.bot.emojiList.error} Role not found.`);
                     };
                 } else {
-                    msg.channel.createMessage(`${this.bot.emojiList.error} Role not found.`);
+                    msg.channel.createMessage(`${this.bot.emojiList.error} User not found.`);
                 };
-            } else {
-                msg.channel.createMessage(`${this.bot.emojiList.error} User not found.`);
             };
-        }
-    }
-}
+        };
+    };
+};
 
 module.exports = Unmute;
