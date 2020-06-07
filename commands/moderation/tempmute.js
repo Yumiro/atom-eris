@@ -12,7 +12,7 @@ class tempMute extends Command {
         this.run = async (msg, args) => {
             const user = msg.mentions[0] || msg.channel.guild.members.find(f => f.id === args[0]);
             const time = ms(args[1]);
-            const reason = `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(3).join(' ') || 'mute command issued (no reason given)'}`;
+            const reason = `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(3).join(' ') || `mute command issued (no reason given, muted for ${args[1]})`}, muted for ${args[1]}`;
             let role = msg.channel.guild.roles.find(f => f.name === 'Muted' || f.name === 'muted');
 
             if (!msg.member.permission.has('manageRoles')) {
