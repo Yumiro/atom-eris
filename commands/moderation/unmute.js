@@ -9,8 +9,8 @@ class Unmute extends Command {
             aliases: ['um', 'unsilence'],
             usage: 'unmute <user> [reason]'
         })
-        this.run = async (msg) => {
-            const user = msg.mentions[0] || msg.channel.guild.members.find(f => f.id === args[0]);
+        this.run = async (msg, args) => {
+            const user = msg.mentions[0];
             const reason = `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(2).join(' ') || 'unmute command issued (no reason given)'}`;
             let role = msg.channel.guild.roles.find(f => f.name === 'Muted' || f.name === 'muted');
 
