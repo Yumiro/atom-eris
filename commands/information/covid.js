@@ -20,24 +20,24 @@ class COVID extends Command {
                             title: `COVID-19 Statistics for ${result.country}`,
                             fields: [{
                                     name: "Total Cases",
-                                    value: result.cases,
+                                    value: numberThing(result.cases),
                                     inline: true
                                 }, {
                                     name: "New Cases",
-                                    value: result.todayCases,
+                                    value: numberThing(result.todayCases),
                                     inline: true,
                                 }, {
                                     name: "Total Deaths",
-                                    value: result.deaths,
+                                    value: numberThing(result.deaths),
                                     inline: true,
                                 }, {
                                     name: "New Deaths",
-                                    value: result.todayDeaths,
+                                    value: numberThing(result.todayDeaths),
                                     inline: true
                                 },
                                 {
                                     name: "Total Recovered",
-                                    value: result.recovered,
+                                    value: numberThing(result.recovered),
                                     inline: true
                                 }
                             ]
@@ -59,15 +59,15 @@ class COVID extends Command {
                         title: "COVID-19 Global Statistics",
                         fields: [{
                             name: "Total Cases",
-                            value: result.cases,
+                            value: numberThing(result.cases),
                             inline: true
                         }, {
                             name: "Total Deaths",
-                            value: result.deaths,
+                            value: numberThing(result.deaths),
                             inline: true
                         }, {
                             name: "Total Recovered",
-                            value: result.recovered,
+                            value: numberThing(result.recovered),
                             inline: true
                         }],
                     }
