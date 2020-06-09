@@ -56,7 +56,7 @@ class tempMute extends Command {
                             msg.channel.createMessage(`${this.bot.emojiList.error} Please specify a valid time. Example: \`10s\`, \`30m\`, \`24h\``)
                         };
                     } else {
-                        msg.channel.createMessage(`${this.bot.emojiList.error} You don't have the \`Manage Roles\` permission.`);
+                        msg.channel.createMessage(`${this.bot.emojiList.error} This user has the \`Manage Roles\` permission.`);
                     };
                 } else {
                     msg.channel.createMessage(`${this.bot.emojiList.error} User not found.`);
