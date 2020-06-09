@@ -23,7 +23,7 @@ class TempBan extends Command {
                             msg.channel.guild.banMember(user.id, 7, reason);
                             msg.channel.createMessage(`${this.bot.emojiList.check} ${user.mention} has been banned for ${args[1]}.`).then(() => {
                                 setTimeout(function() {
-                                    msg.channel.guild.getBan(args[0].id).then(u => {
+                                    msg.channel.guild.getBan(user.id).then(u => {
                                         msg.channel.guild.unbanMember(u.user.id, 'auto unban')
                                     });
                                 }, time);
