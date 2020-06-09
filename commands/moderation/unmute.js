@@ -19,8 +19,12 @@ class Unmute extends Command {
             } else {
                 if (user) {
                     if (role) {
-                        msg.channel.guild.members.find(f => f.id === user.id).removeRole(role.id, reason);
-                        msg.channel.createMessage(`${this.bot.emojiList.unmute} ${user.mention} has been unmuted.`);
+                        if (!msg.member.roles.find(f => f === role.id)) {
+                            msg.channel.guild.members.find(f => f.id === user.id).removeRole(role.id, reason);
+                            msg.channel.createMessage(`${this.bot.emojiList.unmute} ${user.mention} has been unmuted.`);
+                        } else {
+                            msg.channel.createMessage(`${this.bot.emojiList.error} This user is already unmuted.`);
+                        };
                     } else {
                         msg.channel.createMessage(`${this.bot.emojiList.error} Role not found.`);
                     };
