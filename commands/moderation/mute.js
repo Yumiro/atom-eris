@@ -9,7 +9,7 @@ class Mute extends Command {
             usage: 'mute <user> [reason]'
         })
         this.run = async (msg, args) => {
-            const user = msg.mentions[0] || msg.channel.guild.members.find(f => f.id === args[0]);
+            const user = msg.channel.guild.members.find(f => f.id === msg.mentions[0].id) || msg.channel.guild.members.find(f => f.id === args[0]);
             const reason = `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(3).join(' ') || 'mute command issued (no reason given)'}`;
             let role = msg.channel.guild.roles.find(f => f.name === 'Muted' || f.name === 'muted');
 
@@ -19,8 +19,12 @@ class Mute extends Command {
                 if (user) {
                     if (!msg.channel.guild.members.find(f => f.id === user.id).permission.has('manageRoles')) {
                             if (role) {
-                                msg.channel.guild.members.find(f => f.id === user.id).addRole(role.id, reason);
-                                msg.channel.createMessage(`${this.bot.emojiList.mute} ${user.mention} has been muted.`);
+                                if (user.roles.find(f => f === role.id)) {
+                                    msg.channel.guild.members.find(f => f.id === user.id).addRole(role.id, reason);
+                                    msg.channel.createMessage(`${this.bot.emojiList.mute} ${user.mention} has been muted.`);
+                                } else {
+                                    msg.channel.createMessage(`${this.bot.emojiList.error} This user is already muted.`);
+                                };
                             } else {
                                 try {
                                     msg.channel.createMessage(`${this.bot.emojiList.error} \`Muted\` role not found. Creating one...`).then(m => m.delete(1500));
