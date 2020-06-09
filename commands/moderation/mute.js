@@ -24,7 +24,7 @@ class Mute extends Command {
                                     msg.channel.createMessage(`${this.bot.emojiList.mute} ${user.mention} has been muted.`);
                                 } else {
                                     msg.channel.createMessage(`${this.bot.emojiList.error} This user is already muted.`);
-                                };
+                                }
                             } else {
                                 try {
                                     msg.channel.createMessage(`${this.bot.emojiList.error} \`Muted\` role not found. Creating one...`).then(m => m.delete(1500));
@@ -43,14 +43,14 @@ class Mute extends Command {
                                     msg.channel.createMessage(`${this.bot.emojiList.mute} ${user.mention} has been muted.`);
                                 } catch (e) {
                                     console.log(e);
-                                };
-                            };
+                                }
+                            }
                     } else {
                         msg.channel.createMessage(`${this.bot.emojiList.error} This user has the \`Manage Roles\` permission.`);
-                    };
+                    }
                 } else {
                     msg.channel.createMessage(`${this.bot.emojiList.error} User not found.`);
-                };
+                }
             };
         };
     };

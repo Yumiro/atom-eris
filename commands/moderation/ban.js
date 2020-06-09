@@ -17,14 +17,14 @@ class Ban extends Command {
             } else {
                 if (user) {
                     if (!msg.channel.guild.members.find(f => f.id === user.id).permission.has('banMembers')) {
-                        msg.channel.guild.banMember(user.id, 0, reason);
-                        msg.channel.createMessage(`${this.bot.emojiList.check} Successfully banned ${user.mention}.`);
+                        msg.channel.guild.banMember(user.id, 7, reason);
+                        msg.channel.createMessage(`${this.bot.emojiList.check} ${user.mention} has been banned.`);
                     } else {
                         msg.channel.createMessage(`${this.bot.emojiList.error} This user has the \`Ban Members\` permission.`);
                     }
                 } else {
                     msg.channel.createMessage(`${this.bot.emojiList.error} User not found.`);
-                };
+                }
             };
         };
     };

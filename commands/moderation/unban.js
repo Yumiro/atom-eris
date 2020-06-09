@@ -21,7 +21,7 @@ class Unban extends Command {
                         msg.channel.createMessage(`${this.bot.emojiList.check} Successfully unbanned ${u.user.username.replace(/[^\x00-\x7F]/g, "")}#${u.user.discriminator}.`);
                     });
                 } else {
-                    msg.channel.createMessage(`${this.bot.emojiList.error} User not found.`);
+                    msg.channel.createMessage(`${this.bot.emojiList.error} User not found.`); // fix this later
                 };
             };
         };

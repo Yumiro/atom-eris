@@ -24,13 +24,13 @@ class Unmute extends Command {
                             msg.channel.createMessage(`${this.bot.emojiList.unmute} ${user.mention} has been unmuted.`);
                         } else {
                             msg.channel.createMessage(`${this.bot.emojiList.error} This user is already unmuted.`);
-                        };
+                        }
                     } else {
                         msg.channel.createMessage(`${this.bot.emojiList.error} Role not found.`);
-                    };
+                    }
                 } else {
                     msg.channel.createMessage(`${this.bot.emojiList.error} User not found.`);
-                };
+                }
             };
         };
     };

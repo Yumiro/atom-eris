@@ -31,7 +31,7 @@ class tempMute extends Command {
                                     });
                                 } else {
                                     msg.channel.createMessage(`${this.bot.emojiList.error} This user is already muted.`);
-                                };
+                                }
                             } else {
                                 try {
                                     msg.channel.createMessage(`${this.bot.emojiList.error} \`Muted\` role not found. Creating one...`).then(m => m.delete(1500));
@@ -54,17 +54,17 @@ class tempMute extends Command {
                                     });
                                 } catch (e) {
                                     console.log(e);
-                                };
-                            };
+                                }
+                            }
                         } else {
-                            msg.channel.createMessage(`${this.bot.emojiList.error} Please specify a valid time. Example: \`10s\`, \`30m\`, \`24h\``)
-                        };
+                            msg.channel.createMessage(`${this.bot.emojiList.error} Please specify a valid time. Example: \`10s\`, \`30m\`, \`24h\``);
+                        }
                     } else {
                         msg.channel.createMessage(`${this.bot.emojiList.error} This user has the \`Manage Roles\` permission.`);
-                    };
+                    }
                 } else {
                     msg.channel.createMessage(`${this.bot.emojiList.error} User not found.`);
-                };
+                }
             };
         };
     };
