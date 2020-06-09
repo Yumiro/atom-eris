@@ -19,7 +19,7 @@ class Mute extends Command {
                 if (user) {
                     if (!msg.channel.guild.members.find(f => f.id === user.id).permission.has('manageRoles')) {
                             if (role) {
-                                if (user.roles.find(f => f === role.id)) {
+                                if (!user.roles.find(f => f === role.id)) {
                                     msg.channel.guild.members.find(f => f.id === user.id).addRole(role.id, reason);
                                     msg.channel.createMessage(`${this.bot.emojiList.mute} ${user.mention} has been muted.`);
                                 } else {
