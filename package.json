@@ -20,6 +20,7 @@
     "node-fetch": "^2.6.0",
     "node-superfetch": "^0.1.10",
     "nodemon": "^2.0.4",
-    "rss-parser": "^3.8.0"
+    "rss-parser": "^3.8.0",
+    "superagent": "^5.2.2"
   }
 }

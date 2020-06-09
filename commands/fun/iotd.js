@@ -8,7 +8,7 @@ class IOTD extends Command {
             description: 'Sends an image of the day taken from NASA',
             category: '😂 Fun',
             aliases: ['nasa-iotd', 'nasaiotd', 'image-of-the-day', 'imageoftheday', 'nasa-image', 'nasaimage'],
-            usage: 'iotd [user]'
+            usage: 'iotd'
         })
         this.run = async (msg) => {
             const feed = await parser.parseURL('https://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss');
