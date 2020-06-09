@@ -16,12 +16,8 @@ class Unban extends Command {
                 msg.channel.createMessage(`${this.bot.emojiList.error} You don't have the \`Ban Members\` permission.`);
             } else {
                 if (user) {
-                    if (!msg.channel.guild.members.find(f => f.id === user.id).permission.has('banMembers')) {
                         msg.channel.guild.unbanMember(user.id, reason);
                         msg.channel.createMessage(`${this.bot.emojiList.check} Successfully unbanned ${user.mention}.`);
-                    } else {
-                        msg.channel.createMessage(`${this.bot.emojiList.error} This user has the \`Ban Members\` permission.`);
-                    }
                 } else {
                     msg.channel.createMessage(`${this.bot.emojiList.error} User not found.`);
                 };
