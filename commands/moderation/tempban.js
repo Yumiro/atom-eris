@@ -12,7 +12,7 @@ class TempBan extends Command {
         this.run = async (msg, args) => {
             const user = msg.mentions[0] || msg.channel.guild.members.find(f => f.id === args[0]);
             const time = ms(args[1]);
-            const reason = `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(2).join(' ') || 'tempban command issued (no reason given)'}`;
+            const reason = `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(3).join(' ') || 'tempban command issued (no reason given)'}`;
 
             if (!msg.member.permission.has('banMembers')) {
                 msg.channel.createMessage(`${this.bot.emojiList.error} You don't have the \`Ban Members\` permission.`);
