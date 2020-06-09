@@ -61,8 +61,8 @@ global.firstUpper = function firstUpper(string) {
     return first + rest
 };
 
-global.numberThing = function numberThing(string) {
-    string.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+global.numberThing = function numberThing(num) {
+    num.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
     return string
 }
 
