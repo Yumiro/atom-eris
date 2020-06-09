@@ -9,7 +9,7 @@ class Ban extends Command {
             usage: 'ban <user> [reason]'
         })
         this.run = async (msg, args) => {
-            const user = msg.mentions[0];
+            const user = msg.mentions[0] || msg.channel.guild.members.find(f => f.id === args[0]);
             const reason = `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(2).join(' ') || 'ban command issued (no reason given)'}`;
 
             if (!msg.member.permission.has('banMembers')) {
