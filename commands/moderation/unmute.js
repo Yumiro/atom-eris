@@ -10,7 +10,7 @@ class Unmute extends Command {
             usage: 'unmute <user> [reason]'
         })
         this.run = async (msg, args) => {
-            const user = msg.mentions[0] || msg.channel.guild.members.find(f => f.id === args[0]);
+            const user = msg.channel.guild.members.find(f => f.id === msg.mentions[0]) || msg.channel.guild.members.find(f => f.id === args[0]);
             const reason = `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(2).join(' ') || 'unmute command issued (no reason given)'}`;
             let role = msg.channel.guild.roles.find(f => f.name === 'Muted' || f.name === 'muted');
 
@@ -19,7 +19,7 @@ class Unmute extends Command {
             } else {
                 if (user) {
                     if (role) {
-                        if (user.member.roles.find(f => f === role.id)) {
+                        if (user.roles.find(f => f === role.id)) {
                             msg.channel.guild.members.find(f => f.id === user.id).removeRole(role.id, reason);
                             msg.channel.createMessage(`${this.bot.emojiList.unmute} ${user.mention} has been unmuted.`);
                         } else {
