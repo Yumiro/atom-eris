@@ -7,7 +7,7 @@ class guildBanRemove {
         channel.createMessage({
             embed: {
                 color: this.bot.embedCOLOR,
-                title: 'Ban Removed',
+                title: 'Member Unbanned',
                 fields: [{
                     name: 'User',
                     value: user.username + '#' + user.discriminator + ` (${user.id})`
