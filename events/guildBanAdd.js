@@ -2,8 +2,7 @@ class guildBanAdd {
     constructor(bot) {
         this.bot = bot
     }
-    async run(user) {
-        // Just incase someone has another server named 'atom/dev'
+    async run(guild, user) {
         const channel = this.bot.guilds.find(f => f.name === 'atom/dev' && f.channels.has('613783535630680076')).channels.find(f => f.id === '613783535630680076');
         channel.createMessage({
             embed: {
