@@ -14,7 +14,7 @@ class Bans extends Command {
                 msg.channel.createMessage({
                     embed: {
                         color: bot.embedCOLOR,
-                        description: `🔨 This server has ${b.length} ${b.length === 1 ? "ban" : "bans"}`,
+                        description: `🔨 This server has ${b.length} ${b.length === 1 ? 'ban' : 'bans'}`,
                         footer: {
                             text: msg.channel.guild.name
                         }

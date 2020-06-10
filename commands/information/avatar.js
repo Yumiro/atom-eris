@@ -16,10 +16,10 @@ class Avatar extends Command {
                     color: bot.embedCOLOR,
                     author: {
                         name: user.username + '\'s ' + 'Avatar',
-                        url: user.dynamicAvatarURL('jpg', '2048') || user.defaultAvatarURL
+                        url: user.dynamicAvatarURL('', '2048') || user.defaultAvatarURL
                     },
                     image: {
-                        url: user.dynamicAvatarURL('jpg', '2048') || user.defaultAvatarURL
+                        url: user.dynamicAvatarURL('', '2048') || user.defaultAvatarURL
                     }
                 }
             })
