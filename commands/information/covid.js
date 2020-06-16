@@ -7,7 +7,7 @@ class COVID extends Command {
             name: 'covid',
             description: 'Displays information about the 2019-2020 Coronavirus disease.',
             category: '❔ Information',
-            aliases: ['coronavirus', 'covid-19', 'covid19', 'ncov'],
+            aliases: ['coronavirus', 'covid-19', 'covid19', 'ncov', 'cov'],
             usage: 'covid [country]'
         })
         this.run = async (msg, args) => {
