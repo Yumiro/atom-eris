@@ -22,19 +22,19 @@ class About extends Command {
                     },
                     fields: [{
                         name: `\`${body[0].sha.substring(0, 7)}\` by ${body[0].commit.author.name}`,
-                        value: `[${body[0].commit.message}](https://github.com/Yumiro/atom-bot/commit/${body[0].sha.substring(0, 7)})`
+                        value: `[${body[0].commit.message}](https://github.com/Yumiro/atom-eris/commit/${body[0].sha.substring(0, 7)})`
                     }, {
                         name: `\`${body[1].sha.substring(0, 7)}\` by ${body[1].commit.author.name}`,
-                        value: `[${body[1].commit.message}](https://github.com/Yumiro/atom-bot/commit/${body[1].sha.substring(0, 7)})`
+                        value: `[${body[1].commit.message}](https://github.com/Yumiro/atom-eris/commit/${body[1].sha.substring(0, 7)})`
                     }, {
                         name: `\`${body[2].sha.substring(0, 7)}\` by ${body[2].commit.author.name}`,
-                        value: `[${body[2].commit.message}](https://github.com/Yumiro/atom-bot/commit/${body[2].sha.substring(0, 7)})`
+                        value: `[${body[2].commit.message}](https://github.com/Yumiro/atom-eris/commit/${body[2].sha.substring(0, 7)})`
                     }, {
                         name: `\`${body[3].sha.substring(0, 7)}\` by ${body[3].commit.author.name}`,
-                        value: `[${body[3].commit.message}](https://github.com/Yumiro/atom-bot/commit/${body[3].sha.substring(0, 7)})`
+                        value: `[${body[3].commit.message}](https://github.com/Yumiro/atom-eris/commit/${body[3].sha.substring(0, 7)})`
                     }, {
                         name: `\`${body[4].sha.substring(0, 7)}\` by ${body[4].commit.author.name}`,
-                        value: `[${body[4].commit.message}](https://github.com/Yumiro/atom-bot/commit/${body[4].sha.substring(0, 7)})`
+                        value: `[${body[4].commit.message}](https://github.com/Yumiro/atom-eris/commit/${body[4].sha.substring(0, 7)})`
                     }, {
                         name: 'Library',
                         value: 'Eris'
