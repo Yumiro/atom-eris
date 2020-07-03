@@ -6,7 +6,7 @@ class Mentionable extends Command {
             description: 'Sets the specified role mentionable or not mentionable (if mentionable, will set not mentionable and vice-versa)',
             category: '🔨 Moderation',
             aliases: ['set-mentionable', 'setmentionable', 'set-mention', 'mention'],
-            usage: 'mentionable [role name]'
+            usage: 'mentionable <role name>'
         });
         this.run = async (msg, args) => {
             if (!msg.member.permission.has('manageRoles')) {
