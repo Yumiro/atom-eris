@@ -6,7 +6,7 @@ class QR extends Command {
             description: 'Generates a QR code',
             category: '😂 Fun',
             aliases: ['qr'],
-            usage: 'qrcode [text]'
+            usage: 'qrcode <text>'
         })
         this.run = async (msg, args) => {
             msg.channel.createMessage({
