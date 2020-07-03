@@ -5,7 +5,7 @@ class Mentionable extends Command {
             name: 'mentionable',
             description: 'Sets the specified role mentionable or not mentionable (if mentionable, will set not mentionable and vice-versa)',
             category: '🔨 Moderation',
-            aliases: ['set-mentionable', 'setmentionable'],
+            aliases: ['set-mentionable', 'setmentionable', 'set-mention', 'mention'],
             usage: 'mentionable [true|false] [role name]'
         });
         this.run = async (msg, args) => {
