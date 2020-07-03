@@ -3,7 +3,7 @@ class Mentionable extends Command {
     constructor(bot) {
         super(bot, {
             name: 'mentionable',
-            description: 'Sets the specified role mentionable or not mentionable',
+            description: 'Sets the specified role mentionable or not mentionable (if mentionable, will set not mentionable and vice-versa)',
             category: '🔨 Moderation',
             aliases: ['set-mentionable', 'setmentionable'],
             usage: 'mentionable [true|false] [role name]'
@@ -14,20 +14,22 @@ class Mentionable extends Command {
             } else {
                 const role = msg.channel.guild.roles.find(f => f.name === args.slice(1).join(' '));
 
-                if (msg.content.includes('true') && role) {
-                    role.edit({
-                        mentionable: true
-                    });
+                if (role) {
+                    if (role.mentionable === false) {
+                        role.edit({
+                            mentionable: true
+                        });
 
-                    msg.channel.createMessage(`${bot.emojiList.check} Successfully made **${role.name}** mentionable.`);
-                };
+                        msg.channel.createMessage(`${this.bot.emojiList.check} Successfully made **${role.name}** mentionable.`);
+                    } else if (role.mentionable === true) {
+                        role.edit({
+                            mentionable: false
+                        });
 
-                if (msg.content.includes('false') && role) {
-                    role.edit({
-                        mentionable: false
-                    });
-
-                    msg.channel.createMessage(`${bot.emojiList.check} Successfully made **${role.name}** unmentionable.`);
+                        msg.channel.createMessage(`${this.bot.emojiList.check} Successfully made **${role.name}** not mentionable.`)
+                    };
+                } else {
+                    msg.channel.createMessage(`${this.bot.emojiList.error} Role not found.`);
                 };
             };
         };

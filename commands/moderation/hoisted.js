@@ -3,7 +3,7 @@ class Hoisted extends Command {
     constructor(bot) {
         super(bot, {
             name: 'hoisted',
-            description: 'Sets the specified role hoisted or not hoisted',
+            description: 'Sets the specified role hoisted or not hoisted (if hoisted will set not hoisted and vice-versa)',
             category: '🔨 Moderation',
             aliases: ['set-hoisted', 'sethoisted'],
             usage: 'hoisted [true|false] [role name]'
@@ -14,20 +14,22 @@ class Hoisted extends Command {
             } else {
                 const role = msg.channel.guild.roles.find(f => f.name === args.slice(1).join(' '));
 
-                if (msg.content.includes('true') && role) {
-                    role.edit({
-                        hoist: true
-                    });
+                if (role) {
+                    if (role.hoist === false) {
+                        role.edit({
+                            hoist: true
+                        });
 
-                    msg.channel.createMessage(`${bot.emojiList.check} Successfully made **${role.name}** hoisted.`);
-                };
+                        msg.channel.createMessage(`${this.bot.emojiList.check} Successfully made **${role.name}** hoisted.`);
+                    } else if (role.hoist === true) {
+                        role.edit({
+                            hoist: false
+                        });
 
-                if (msg.content.includes('false') && role) {
-                    role.edit({
-                        hoist: false
-                    });
-
-                    msg.channel.createMessage(`${bot.emojiList.check} Successfully made **${role.name}** not hoisted.`);
+                        msg.channel.createMessage(`${this.bot.emojiList.check} Successfully made **${role.name}** not hoisted.`);
+                    };
+                } else {
+                    msg.channel.createMessage(`${this.bot.emojiList.error} Role not found.`);
                 };
             };
         };
