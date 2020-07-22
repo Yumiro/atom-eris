@@ -13,12 +13,13 @@ class Eval extends Command {
             developer: true
         })
         this.run = async (msg, args) => {
+        var message = msg
             if (!args[0]) {
                 this.bot.createMessage(msg.channel.id, `${this.bot.emojiList.error} Are you expecting me to evaluate nothing?`);
             } else if (args[0]) {
                 if (require('../../config').developers.includes(msg.author.id)) {
                     this.bot.createMessage(msg.channel.id, `**Input:**\n\`\`\`js\n${args.join(" ")}\n\`\`\``)
-                        .then((message) => {
+                        .then((m) => {
                             var code = eval(args.join(" "));
                             if (args.includes('bot.token')) {
                                 return;
@@ -26,7 +27,7 @@ class Eval extends Command {
                             if (args.includes('bot.config')) {
                                 return;
                             }
-                            message.edit(`**Input:**\n\`\`\`js\n${args.join(" ")}\n\`\`\` \n` + `**Output:**\n\`\`\`js\n${inspect(code, {compact: true, depth: 0})}\n\`\`\` \n`).catch(err => {
+                            m.edit(`**Input:**\n\`\`\`js\n${args.join(" ")}\n\`\`\` \n` + `**Output:**\n\`\`\`js\n${inspect(code, {compact: true, depth: 0})}\n\`\`\` \n`).catch(err => {
                                 this.bot.createMessage(msg.channel.id, `\`\`\`js\n${err}\n\`\`\``)
                             });
                         }).catch(err => {
