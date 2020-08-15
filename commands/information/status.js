@@ -15,8 +15,7 @@ class Status extends Command {
                 embed: {
                     color: bot.embedCOLOR,
                     footer: {
-                        text: msg.channel.guild.name,
-                        icon_url: this.bot.versionIMG
+                        text: msg.channel.guild.name
                     },
                     fields: [
                         {

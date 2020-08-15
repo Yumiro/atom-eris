@@ -43,8 +43,7 @@ class About extends Command {
                         value: `Head Developer - ${bot.users.get('458659194707640321').username}#${bot.users.get('458659194707640321').discriminator}\nDeveloper - ${bot.users.get('621154191192096778').username}#${bot.users.get('621154191192096778').discriminator}\nContributor - ${bot.users.get('593510080528515072').username}#${bot.users.get('593510080528515072').discriminator}`
                     }],
                     footer: {
-                        text: `${bot.version} • showing latest 5 commits`,
-                        icon_url: bot.versionIMG
+                        text: `${bot.version} • showing latest 5 commits`
                     }
                 }
             });

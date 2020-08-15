@@ -36,7 +36,7 @@ readdir('./commands', (err, folders) => {
 
 bot.config = config;
 bot.version = 'v4-stable-dragonglass';
-bot.versionIMG = 'https://vignette.wikia.nocookie.net/azure-mines/images/4/43/Abyssium.png';
+// bot.versionIMG = 'https://vignette.wikia.nocookie.net/azure-mines/images/4/43/Abyssium.png';
 bot.embedCOLOR = 0x2f3136;
 bot.emojiList = {
     'bell': '<a:abell:486584452600954890>',
