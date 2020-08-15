@@ -9,8 +9,8 @@ class client extends Eris {
         MongoClient.connect(`mongodb://flag:${config.dbPass}@localhost:27017`, (err, client) => { 
             this.userDB = client.db("atom").collection("users");
             this.guildDB = client.db("atom").collection("guilds");
-        })
-    };
-};
+        });
+    }
+}
 
 module.exports = client;

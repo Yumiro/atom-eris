@@ -73,8 +73,8 @@ class COVID extends Command {
                     }
                 });
             };
-        };
-    };
-};
+        }
+    }
+}
 
 module.exports = COVID;

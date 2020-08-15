@@ -52,8 +52,8 @@ class Mute extends Command {
                     msg.channel.createMessage(`${this.bot.emojiList.error} User not found.`);
                 }
             };
-        };
-    };
-};
+        }
+    }
+}
 
 module.exports = Mute;

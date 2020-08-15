@@ -21,8 +21,8 @@ class Bans extends Command {
                     }
                 });
             });
-        };
-    };
-};
+        }
+    }
+}
 
 module.exports = Bans;

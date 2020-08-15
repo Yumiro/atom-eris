@@ -15,8 +15,8 @@ class Ping extends Command {
                     description: `⌛ ${this.bot.shards.get(0).latency}ms`
                 }
             });
-        };
-    };
-};
+        }
+    }
+}
 
 module.exports = Ping;

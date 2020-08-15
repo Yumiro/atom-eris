@@ -25,8 +25,8 @@ class IOTD extends Command {
                     },
                 }
             });
-        };
-    };
-};
+        }
+    }
+}
 
 module.exports = IOTD;

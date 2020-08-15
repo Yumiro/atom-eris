@@ -35,8 +35,8 @@ class APOD extends Command {
                     });
                 }
             });
-        };
-    };
-};
+        }
+    }
+}
 
 module.exports = APOD;

@@ -85,8 +85,8 @@ class Help extends Command {
 
                 await msg.channel.createMessage(embed);
             };
-        };
-    };
-};
+        }
+    }
+}
 
 module.exports = Help;

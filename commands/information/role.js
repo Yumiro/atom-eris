@@ -64,9 +64,9 @@ class Role extends Command {
                 });
             } else {
                 msg.channel.createMessage(`${this.bot.emojiList.error} Role not found.`);
-            }
-        };
-    };
-};
+            };
+        }
+    }
+}
 
 module.exports = Role;

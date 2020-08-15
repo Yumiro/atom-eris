@@ -22,9 +22,9 @@ class Avatar extends Command {
                         url: user.dynamicAvatarURL('', '2048') || user.defaultAvatarURL
                     }
                 }
-            })
-        };
-    };
-};
+            });
+        }
+    }
+}
 
 module.exports = Avatar;

@@ -16,8 +16,8 @@ class Roles extends Command {
                     description: '**<@&' + roles.join('>** **<@&') + '>**'
                 }
             });
-        };
-    };
-};
+        }
+    }
+}
 
 module.exports = Roles;

@@ -64,6 +64,6 @@ global.firstUpper = function firstUpper(string) {
 global.numberThing = function numberThing(num) {
     const number = num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
     return number
-}
+};
 
 bot.connect();

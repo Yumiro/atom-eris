@@ -19,8 +19,8 @@ class Dick extends Command {
                     description: 8 + '='.repeat(size) + 'D'
                 }
             });
-        };
-    };
-};
+        }
+    }
+}
 
 module.exports = Dick;

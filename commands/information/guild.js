@@ -89,8 +89,8 @@ class Guild extends Command {
                     ]
                 }
             });
-        };
-    };
-};
+        }
+    }
+}
 
 module.exports = Guild;

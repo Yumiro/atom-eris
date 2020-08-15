@@ -22,7 +22,7 @@ class Command {
             aliases,
             developer
         };
-    };
-};
+    }
+}
 
 module.exports = Command;

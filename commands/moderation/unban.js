@@ -24,8 +24,8 @@ class Unban extends Command {
                     msg.channel.createMessage(`${this.bot.emojiList.error} User not found.`); // fix this later
                 };
             };
-        };
-    };
-};
+        }
+    }
+}
 
 module.exports = Unban;

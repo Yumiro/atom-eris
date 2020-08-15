@@ -52,8 +52,8 @@ class Status extends Command {
                     ]
                 }
             });
-        };
-    };
-};
+        }
+    }
+}
 
 module.exports = Status;

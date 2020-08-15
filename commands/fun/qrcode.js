@@ -17,8 +17,8 @@ class QR extends Command {
                     }
                 }
             });
-        };
-    };
-};
+        }
+    }
+}
 
 module.exports = QR;

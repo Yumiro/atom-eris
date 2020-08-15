@@ -32,8 +32,8 @@ class Mentionable extends Command {
                     msg.channel.createMessage(`${this.bot.emojiList.error} Role not found.`);
                 };
             };
-        };
-    };
-};
+        }
+    }
+}
 
 module.exports = Mentionable;
