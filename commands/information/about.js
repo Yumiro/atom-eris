@@ -20,6 +20,7 @@ class About extends Command {
                         name: 'Changelog',
                         url: 'https://discord.gg/jUMqBjU'
                     },
+                    color: bot.embedCOLOR,
                     fields: [{
                         name: `\`${body[0].sha.substring(0, 7)}\` by ${body[0].commit.author.name}`,
                         value: `[${body[0].commit.message}](https://github.com/Yumiro/atom-eris/commit/${body[0].sha.substring(0, 7)})`
