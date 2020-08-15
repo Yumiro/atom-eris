@@ -46,7 +46,7 @@ class COVID extends Command {
                 } catch (e) {
                     msg.channel.createMessage({
                         embed: {
-                            color: 0x36393f,
+                            color: bot.embedCOLOR,
                             description: `${bot.emojiList.error} Couldn't find the country you were looking for.`
                         }
                     });
@@ -55,7 +55,7 @@ class COVID extends Command {
                 const result = await fetch("https://disease.sh/v2/all").then((res) => res.json());
                 msg.channel.createMessage({
                     embed: {
-                        color: 0x36393f,
+                        color: bot.embedCOLOR,
                         title: "COVID-19 Global Statistics",
                         fields: [{
                             name: "Total Cases",
