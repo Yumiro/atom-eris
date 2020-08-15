@@ -31,6 +31,10 @@ class messageCreate {
                 }
             };
         };
+
+        if (msg.channel.id === '744194802173739009') {
+            this.bot.crosspostMessage('744194802173739009', msg.id)
+        }
     }
 }
 
