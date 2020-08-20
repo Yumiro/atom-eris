@@ -6,7 +6,6 @@ class guildMemberAdd {
         this.bot = bot
     }
     async run(guild, member) {
-        console.log(member)
         const channel = this.bot.guilds.find(f => f.name === 'atom/dev').channels.find(f => f.id === '613783535630680076');
         channel.createMessage({
             embed: {
@@ -41,13 +40,6 @@ class guildMemberAdd {
                     inline: true
                 }]
             }
-        });
-
-        member.guild.getInvites().then(guildInvites => {
-            const ei = this.bot.invites[member.guild.id];
-            const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-            const inviter = bot.users.get(invite.inviter.id);
-            channel.createMessage(`${member.username}#${member.discriminator} joined using ${invite.code} from ${inviter.username}#${inviter.discriminator}`);
         });
     }
 }
