@@ -6,7 +6,7 @@ class Ready {
         this.bot.editStatus('online', { name: `over ${this.bot.guilds.size} guilds • ${this.bot.config.prefix}help `, type: 3 });
         console.log('Successfully connected to Discord.');
         const invites = {};
-        bot.guilds.forEach(g => {
+        this.bot.guilds.forEach(g => {
             g.getInvites().then(guildInvites => {
                 invites[g.id] = guildInvites
             });
