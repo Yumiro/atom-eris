@@ -6,6 +6,7 @@ class guildMemberAdd {
         this.bot = bot
     }
     async run(guild, member) {
+        console.log(member)
         const channel = this.bot.guilds.find(f => f.name === 'atom/dev').channels.find(f => f.id === '613783535630680076');
         channel.createMessage({
             embed: {
