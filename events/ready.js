@@ -11,6 +11,7 @@ class Ready {
                 invites[g.id] = guildInvites
             });
         });
+        this.bot.invites = invites;
     }
 }
 
