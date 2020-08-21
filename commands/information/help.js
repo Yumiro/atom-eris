@@ -43,7 +43,7 @@ class Help extends Command {
             if (args[0]) {
                 let cmd = args[0];
 
-                if (!this.bot.commands.has(cmd)) {
+                if (this.bot.commands.has(cmd)) {
                     cmd = this.bot.commands.get(cmd);
                 } else {
                     msg.channel.createMessage(`${this.bot.emojiList.error} Something went wrong. Please make sure to type the command's name correctly.`);
