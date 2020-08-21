@@ -26,12 +26,6 @@ class Help extends Command {
                 this.bot.commands.forEach(f => {
                     if (!groups.includes(f.help.category)) {
                         if (!require('../../config').developers.includes(msg.author.id) && f.config.developer) return;
-                        groups.push(f.help.category);
-                    };
-                });
-
-                this.bot.commands.forEach(f => {
-                    if (!groups.includes(f.help.category)) {
                         if(!msg.member.permission.has('manageMessages')) return;
                         groups.push(f.help.category);
                     };
