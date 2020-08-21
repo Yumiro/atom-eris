@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "axoncore": "^1.1.1",
-    "eris": "^0.13.1",
+    "eris": "^0.13.3",
     "minimist": "^1.2.5",
     "moment": "^2.26.0",
     "moment-duration-format": "^2.3.2",
