@@ -41,6 +41,14 @@ class guildMemberAdd {
                 }]
             }
         });
+
+        member.guild.getInvites().then(guildInvites => {
+            const ei = this.bot.invites[member.guild.id];
+            this.bot.invites[member.guild.id] = guildInvites;
+            const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses );
+            const inviter = this.bot.users.get(invite.inviter.id);
+            channel.createMessage(`${member.mention} joined using invite code ${invite.code} from ${inviter.mention}. Invite has been used ${invite.uses} times`)
+        });
     }
 }
 
