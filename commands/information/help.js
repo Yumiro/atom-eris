@@ -46,12 +46,11 @@ class Help extends Command {
                 if (this.bot.commands.has(cmd)) {
                     cmd = this.bot.commands.get(cmd);
                     if (cmd.category === '🧪 Development' && cmd.config.developer === true && !require('../../config').developers.includes(msg.author.id)) {
-                        msg.channel.createMessage(`${this.bot.emojiList.error} You can't do that, you're not a Developer.`);
                         return;
                     };
 
                     if (cmd.category === '🔨 Moderation' && !msg.member.permission.has('manageMessages')) {
-                        msg.channel.createMessage(`${this.bot.emojiList.error} You can't do that, you're not a Moderator. (Missing \`MANAGE_MESSAGES\`)`);
+                        return;
                     };
                 } else {
                     msg.channel.createMessage(`${this.bot.emojiList.error} Something went wrong. Please make sure to type the command's name correctly.`);
