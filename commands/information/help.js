@@ -26,7 +26,6 @@ class Help extends Command {
                 this.bot.commands.forEach(f => {
                     if (!groups.includes(f.help.category)) {
                         if (!require('../../config').developers.includes(msg.author.id) && f.config.developer) return;
-                        if (f.category === '🔨 Moderation' && !msg.member.permission.has('manageMessages')) return;
                         groups.push(f.help.category);
                     };
                 });
@@ -46,13 +45,6 @@ class Help extends Command {
 
                 if (this.bot.commands.has(cmd)) {
                     cmd = this.bot.commands.get(cmd);
-                    if (cmd.category === '🧪 Development' && cmd.config.developer === true && !require('../../config').developers.includes(msg.author.id)) {
-                        return;
-                    };
-
-                    if (cmd.category === '🔨 Moderation' && !msg.member.permission.has('manageMessages')) {
-                        return;
-                    };
                 } else {
                     msg.channel.createMessage(`${this.bot.emojiList.error} Something went wrong. Please make sure to type the command's name correctly.`);
                 };
