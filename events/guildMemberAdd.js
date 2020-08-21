@@ -49,7 +49,7 @@ class guildMemberAdd {
             const inviter = this.bot.users.get(invite.inviter.id);
             const inviteChannel = this.bot.guilds.find(f => f.id === '637862268662710322').channels.find(f => f.id === '746338222258258070');
             if (member.guild.id === '637862268662710322') {
-                inviteChannel.createMessage(`${member.mention} joined using invite code \`${invite.code}\` from \`${inviter.mention}\` (${invite.uses} uses)`);
+                inviteChannel.createMessage(`${member.mention} joined using invite code \`${invite.code}\` from \`${inviter.username}#${inviter.discriminator} (${inviter.mention})\` (${invite.uses} uses)`);
             } else {
                 return;
             };
