@@ -61,13 +61,13 @@ class Help extends Command {
                                 inline: false
                             },
                             {
-                                name: `Aliases`,
-                                value: cmd.config.aliases.sort().join(', '),
+                                name: `Usage`,
+                                value: '`' + cmd.help.usage + '`',
                                 inline: true
                             },
                             {
-                                name: `Usage`,
-                                value: cmd.help.usage,
+                                name: `Aliases`,
+                                value: cmd.config.aliases.sort().join(', '),
                                 inline: true
                             },
                             {
