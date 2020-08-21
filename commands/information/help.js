@@ -30,6 +30,13 @@ class Help extends Command {
                     };
                 });
 
+                this.bot.commands.forEach(f => {
+                    if (!groups.includes(f.help.category)) {
+                        if (f.category === '🔨 Moderation' && !msg.member.permission.has('manageMessages')) return;
+                        groups.push(f.help.category);
+                    };
+                });
+
                 groups.forEach((category) => {
                     embed.embed.fields.push({
                         name: firstUpper(category),
