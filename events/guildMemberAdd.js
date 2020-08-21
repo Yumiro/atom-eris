@@ -47,7 +47,8 @@ class guildMemberAdd {
             this.bot.invites[member.guild.id] = guildInvites;
             const invite = guildInvites.find(i => ei.find(c => c.code === i.code).uses < i.uses );
             const inviter = this.bot.users.get(invite.inviter.id);
-            channel.createMessage(`${member.mention} joined using invite code ${invite.code} from ${inviter.mention}. Invite has been used ${invite.uses} times`)
+            const inviteChannel = this.bot.guilds.find(f => f.id === '637862268662710322').channels.find(f => f.id === '746338222258258070');
+            inviteChannel.createMessage(`${member.mention} joined using invite code \`${invite.code}\` from ${inviter.mention} (${invite.uses} uses)`);
         });
     }
 }
