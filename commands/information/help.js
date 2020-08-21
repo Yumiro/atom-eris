@@ -30,11 +30,18 @@ class Help extends Command {
                     };
                 });
 
+                this.bot.commands.forEach(f => {
+                    if (!groups.includes(f.help.category)) {
+                        if(!msg.member.permission.has('manageMessages')) return;
+                        groups.push(f.help.category);
+                    };
+                });
+
                 groups.forEach((category) => {
                     embed.embed.fields.push({
                         name: firstUpper(category),
                         value: `\`${[...this.bot.commands].filter(f => f[1].help.category === category).map(f => f[1].help.name).join(`\` \``)}\``
-                    })
+                    });
                 });
 
                 msg.channel.createMessage(embed);
