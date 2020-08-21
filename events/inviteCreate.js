@@ -3,9 +3,7 @@ class inviteCreate {
         this.bot = bot
     }
     async run(guild, invite) {
-        if (guild.id === '637862268662710322') {
-            this.bot.invites[guild.id] = invite
-        };
+        // test
     }
 }
 
