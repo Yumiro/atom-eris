@@ -53,8 +53,12 @@ class messageCreate {
             };
         };
 
-        if (msg.channel.id === '747097054135844914') {
-            this.bot.crosspostMessage('747097054135844914', msg.id);
+        if (msg.channel.id === '658419187231883344') {
+            this.bot.crosspostMessage('658419187231883344', msg.id);
+        };
+
+        if (msg.channel.id === '637869925448548353') {
+            this.bot.crosspostMessage('637869925448548353', msg.id);
         };
     }
 }
