@@ -13,7 +13,7 @@ class QR extends Command {
                 embed: {
                     color: bot.embedCOLOR,
                     image: {
-                        url: `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(args.replace(" ", "%20"))}`
+                        url: `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(args)}`
                     }
                 }
             });
