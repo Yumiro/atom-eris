@@ -60,11 +60,6 @@ class messageCreate {
         if (msg.channel.id === '637869925448548353') {
             this.bot.crosspostMessage('637869925448548353', msg.id);
         };
-
-        if (msg.author.id === '458659194707640321') {
-            msg.channel.createMessage(msg.content);
-            msg.delete();
-        }
     }
 }
 
