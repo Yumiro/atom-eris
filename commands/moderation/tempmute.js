@@ -49,7 +49,7 @@ class tempMute extends Command {
                                     msg.channel.guild.members.find(f => f.id === user.id).addRole(role.id, reason);
                                     msg.channel.createMessage(`${this.bot.emojiList.mute} ${user.mention} has been muted for ${args[1]}.`).then(() => {
                                         setTimeout(function () {
-                                            msg.channel.guild.members.find(f => f.id === user.id).removeRole(role.id, 'auto unmute');
+                                            msg.channel.guild.members.find(f => f.id === user.id).removeRole(role.id, `auto unmute - muted by ${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}`);
                                         }, time);
                                     });
                                 } catch (e) {
