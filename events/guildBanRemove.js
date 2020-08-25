@@ -13,7 +13,7 @@ class guildBanRemove {
                     value: user.username + '#' + user.discriminator + ` (${user.id})`
                 }],
                 footer: {
-                    text: msg.channel.guild.name
+                    text: guild.name
                 }
             }
         });

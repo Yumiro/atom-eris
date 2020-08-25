@@ -37,7 +37,7 @@ class guildRoleCreate {
                     inline: true
                 }],
                 footer: {
-                    text: msg.channel.guild.name
+                    text: guild.name
                 }
             }
         });

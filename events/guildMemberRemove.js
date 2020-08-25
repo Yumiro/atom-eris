@@ -36,7 +36,7 @@ class guildMemberRemove {
                     inline: true
                 }],
                 footer: {
-                    text: msg.channel.guild.name
+                    text: guild.name
                 }
             }
         });

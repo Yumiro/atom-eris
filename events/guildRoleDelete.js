@@ -24,7 +24,7 @@ class guildRoleDelete {
                     value: role.id
                 }],
                 footer: {
-                    text: msg.channel.guild.name
+                    text: guild.name
                 }
             }
         });
