@@ -6,7 +6,7 @@ class guildRoleDelete {
         this.bot = bot
     }
     async run(guild, role) {
-        const channel = this.bot.guilds.find(f => f.name === 'atom/dev').channels.get("613783535630680076");
+        const channel = this.bot.guilds.find(f => f.name === 'atom/dev').channels.get("613783841869529094");
         channel.createMessage({
             embed: {
                 color: this.bot.embedCOLOR,
@@ -22,7 +22,10 @@ class guildRoleDelete {
                 }, {
                     name: 'ID',
                     value: role.id
-                }]
+                }],
+                footer: {
+                    text: msg.channel.guild.name
+                }
             }
         });
     }

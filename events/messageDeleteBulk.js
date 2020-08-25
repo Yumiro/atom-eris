@@ -11,7 +11,10 @@ class messageDeleteBulk {
                 fields: [{
                     name: 'Amount',
                     value: msgs.length + ' messages'
-                }]
+                }],
+                footer: {
+                    text: msg.channel.guild.name
+                }
             }
         });
     }

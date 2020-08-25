@@ -16,7 +16,10 @@ class messageDelete {
                 }, {
                     name: 'Message',
                     value: msg.content
-                }]
+                }],
+                footer: {
+                    text: msg.channel.guild.name
+                }
             }
         });
     }
