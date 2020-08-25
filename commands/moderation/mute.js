@@ -10,7 +10,7 @@ class Mute extends Command {
         })
         this.run = async (msg, args) => {
             const user = msg.channel.guild.members.find(f => f.id === msg.mentions[0].id) || msg.channel.guild.members.find(f => f.id === args[0]);
-            const reason = `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(2).join(' ') || `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - mute command issued (no reason given)`}`;
+            const reason = `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(2).join(' ') || `mute command issued (no reason given)`}`;
             let role = msg.channel.guild.roles.find(f => f.name === 'Muted' || f.name === 'muted');
 
             if (!msg.member.permission.has('manageRoles')) {

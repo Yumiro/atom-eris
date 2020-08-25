@@ -10,7 +10,7 @@ class Kick extends Command {
         })
         this.run = async (msg, args) => {
             const user = msg.mentions[0] || msg.channel.guild.members.find(f => f.id === args[0]);
-            const reason = `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(2).join(' ') || `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - kick command issued (no reason given)`}`;
+            const reason = `[${msg.author.username.replace(/[^\x00-\x7F]/g, "")}#${msg.author.discriminator}] - ${msg.content.split(' ').slice(2).join(' ') || `kick command issued (no reason given)`}`;
 
             if (!msg.member.permission.has('kickMembers')) {
                 msg.channel.createMessage(`${this.bot.emojiList.error} You don't have the \`Kick Members\` permission.`);
