@@ -5,7 +5,7 @@ class messageCreate {
         this.bot = bot
     }
     async run(msg) {
-        if (msg.author.bot || msg.channel.type === 'dm') return;
+        if (msg.channel.type === 'dm') return;
 
         if (await this.bot.userDB.countDocuments({
                 "_id": msg.author.id
