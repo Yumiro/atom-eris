@@ -60,10 +60,6 @@ class messageCreate {
         if (msg.channel.id === '637869925448548353') {
             this.bot.crosspostMessage('637869925448548353', msg.id);
         };
-
-        if (msg.channel.id === '602573487416279073') {
-            this.bot.crosspostMessage('602573487416279073', msg.id);
-        };
     }
 }
 
