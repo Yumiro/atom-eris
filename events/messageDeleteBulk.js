@@ -5,15 +5,15 @@ class messageDeleteBulk {
     async run(msgs) {
         const channel = this.bot.guilds.find(f => f.name === 'atom/dev').channels.find(f => f.id === '613783535630680076');
         channel.createMessage({
-            embed:{
-                color: this.bot.embedCOLOR   ,
+            embed: {
+                color: this.bot.embedCOLOR,
                 title: 'Message Delete Bulk',
                 fields: [{
                     name: 'Amount',
                     value: msgs.length + ' messages'
                 }],
                 footer: {
-                    text: msg.channel.guild.name
+                    text: msgs[1].channel.guild.name
                 }
             }
         });
