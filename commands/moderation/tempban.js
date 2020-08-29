@@ -6,7 +6,7 @@ class TempBan extends Command {
             name: 'tempban',
             description: 'Temporarily bans a member in the guild',
             category: '🔨 Moderation',
-            aliases: ['tb', 'tempbean', 'tempb', 'temp-ban'],
+            aliases: ['tb', 'tempbean', 'temp-ban'],
             usage: 'tempban <user> <time> [reason]'
         })
         this.run = async (msg, args) => {

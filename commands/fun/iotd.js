@@ -7,7 +7,7 @@ class IOTD extends Command {
             name: 'iotd',
             description: 'Sends an image of the day taken from NASA',
             category: '😂 Fun',
-            aliases: ['nasa-iotd', 'nasaiotd', 'image-of-the-day', 'imageoftheday', 'nasa-image', 'nasaimage'],
+            aliases: ['image-of-the-day', 'imageoftheday'],
             usage: 'iotd'
         })
         this.run = async (msg) => {

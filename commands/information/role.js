@@ -19,8 +19,7 @@ class Role extends Command {
                     embed: {
                         color: role.color,
                         footer: {
-                            text: msg.channel.guild.name,
-                            icon_url: msg.channel.guild.iconURL
+                            text: msg.channel.guild.name
                         },
                         fields: [{
                                 name: 'Name',

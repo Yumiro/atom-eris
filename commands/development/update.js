@@ -18,10 +18,10 @@ class Update extends Command {
             }, (err, stdout, stderr) => {
                 if (err) {
                     console.error(err);
-                    msg.channel.createMessage(`${this.bot.emojiList.error} Something went wrong. Check the console for any errors.`);
+                    msg.addReaction('👎');
                 } else {
-                    msg.channel.createMessage(`${this.bot.emojiList.check} I am now up to date.`);
                     console.log(stdout);
+                    msg.addReaction('👍');
                 };
             });
         }

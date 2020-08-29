@@ -6,7 +6,7 @@ class Unmute extends Command {
             name: 'unmute',
             description: 'Unmutes a member in the guild',
             category: '🔨 Moderation',
-            aliases: ['um', 'unsilence'],
+            aliases: ['um', 'unshut', 'unsilence'],
             usage: 'unmute <user> [reason]'
         })
         this.run = async (msg, args) => {

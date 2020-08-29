@@ -7,7 +7,7 @@ class Ready {
         console.log('Successfully connected to Discord.');
         
         const wait = require('util').promisify(setTimeout);
-        wait(5000);
+        wait(1000);
 
         this.bot.guilds.forEach(g => {
             g.getInvites().then(guildInvites => {

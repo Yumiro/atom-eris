@@ -13,7 +13,10 @@ class Roles extends Command {
             msg.channel.createMessage({
                 embed: {
                     color: bot.embedCOLOR,
-                    description: '**<@&' + roles.join('>** **<@&') + '>**'
+                    description: '**<@&' + roles.join('>** **<@&') + '>**',
+                    footer: {
+                        text: msg.channel.guild.name
+                    }
                 }
             });
         }

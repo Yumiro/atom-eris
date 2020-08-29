@@ -38,8 +38,8 @@ class Guild extends Command {
             msg.channel.createMessage({
                 embed: {
                     color: bot.embedCOLOR,
-                    author: {
-                        name: msg.channel.guild.name
+                    footer: {
+                        text: msg.channel.guild.name
                     },
                     fields: [{
                             name: 'User Count',

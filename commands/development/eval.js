@@ -8,7 +8,7 @@ class Eval extends Command {
             name: 'eval',
             description: 'Evaluates JavaScript code',
             category: '🧪 Development',
-            aliases: ['js'],
+            aliases: ['code', 'js'],
             usage: 'eval <code>',
             developer: true
         })

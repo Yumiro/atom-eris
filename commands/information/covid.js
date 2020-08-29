@@ -18,6 +18,9 @@ class COVID extends Command {
                         embed: {
                             color: bot.embedCOLOR,
                             title: `COVID-19 Statistics for ${result.country}`,
+                            footer: {
+                                text: result.country
+                            },
                             fields: [{
                                     name: "Total Cases",
                                     value: numberThing(result.cases),

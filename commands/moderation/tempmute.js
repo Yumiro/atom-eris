@@ -6,7 +6,7 @@ class tempMute extends Command {
             name: 'tempmute',
             description: 'Temporarily mutes a member in the guild',
             category: '🔨 Moderation',
-            aliases: ['tm', 'temp-mute', 'temporarymute', 'temporary-mute', 'temp-shut', 'tempshut'],
+            aliases: ['tm', 'temp-mute', 'temp-shut', 'tempshut'],
             usage: 'tempmute <user> <time> [reason]'
         })
         this.run = async (msg, args) => {

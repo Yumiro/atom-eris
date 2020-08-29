@@ -49,7 +49,7 @@ class messageCreate {
                     msg.channel.createMessage(`${bot.emojiList.error} You're not a Developer.`)
                 } else {
                     cmd.run(msg, args);
-                }
+                };
             };
         };
 

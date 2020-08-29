@@ -6,7 +6,7 @@ class APOD extends Command {
             name: 'apod',
             description: 'Sends an astronomy picture of the day taken from NASA',
             category: '😂 Fun',
-            aliases: ['apotd', 'nasa-apod', 'nasa-astronomy', 'astronomypictureoftheday', 'astronomy-picture-of-the-day'],
+            aliases: ['apotd', 'astronomypictureoftheday', 'astronomy-picture-of-the-day'],
             usage: 'apod'
         })
         this.run = async (msg) => {

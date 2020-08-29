@@ -5,7 +5,7 @@ class Hoisted extends Command {
             name: 'hoisted',
             description: 'Sets the specified role hoisted or not hoisted (if hoisted will set not hoisted and vice-versa)',
             category: '🔨 Moderation',
-            aliases: ['set-hoisted', 'sethoisted', 'set-hoist', 'sethoist', 'hoist'],
+            aliases: ['hoist'],
             usage: 'hoisted <role name>'
         });
         this.run = async (msg, args) => {

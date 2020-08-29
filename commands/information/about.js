@@ -17,8 +17,7 @@ class About extends Command {
             msg.channel.createMessage({
                 embed: {
                     author: {
-                        name: 'Changelog',
-                        url: 'https://discord.gg/jUMqBjU'
+                        name: 'Changelog'
                     },
                     color: bot.embedCOLOR,
                     fields: [{

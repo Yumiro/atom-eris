@@ -12,8 +12,7 @@ class guildCreate {
                     color: this.bot.embedCOLOR,
                     title: guild.name,
                     footer: {
-                        text: this.bot.version,
-                        icon_url: this.bot.versionIMG
+                        text: this.bot.version
                     },
                     description: text
                 }
@@ -22,10 +21,9 @@ class guildCreate {
             this.bot.createMessage(guild.ownerID, `This message has been sent to you since I don't have the \`Send Messages\` permission in your server.`);
             this.bot.createMessage(guild.ownerID, {
                 embed: {
-                    color: 0x36393f,
+                    color: this.bot.embedCOLOR,
                     footer: {
-                        text: this.bot.version,
-                        icon_url: this.bot.versionIMG
+                        text: this.bot.version
                     },
                     description: text
                 }
