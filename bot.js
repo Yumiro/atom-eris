@@ -1,6 +1,7 @@
 const config = require('./config.json');
 const Client = require('./structures/Client');
 const bot = new Client(config.token);
+bot.kill = () => process.exit(0)
 const {
     readdir
 } = require('fs');
