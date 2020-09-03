@@ -11,7 +11,7 @@ class Restart extends Command {
         })
         this.run = async (msg) => {
             await msg.addReaction('👍');
-            process.exit();
+            bot.kill()
         }
     }
 }
