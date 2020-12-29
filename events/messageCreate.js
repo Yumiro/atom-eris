@@ -7,7 +7,7 @@ class messageCreate {
     async run(msg) {
         if (msg.channel.type === 'dm') return;
 
-        if (await this.bot.userDB.countDocuments({
+        /*if (await this.bot.userDB.countDocuments({
                 "_id": msg.author.id
             }, {
                 limit: 1
@@ -37,7 +37,7 @@ class messageCreate {
             $set: {
                 "levels.xp": xp + Math.floor(Math.random() * 10) + 10
             }
-        });
+        });*/
 
         if (msg.content.startsWith(require('../config').prefix)) {
             // const command = msg.content.split(' ')[0].slice(2).toLowerCase();

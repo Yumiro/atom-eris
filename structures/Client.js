@@ -6,10 +6,10 @@ class client extends Eris {
         super(options)
         this.commands = new Map();
         this.aliases = new Map();
-        MongoClient.connect(`mongodb://flag:${config.dbPass}@localhost:27017`, (err, client) => { 
+        /*MongoClient.connect(`mongodb://flag:${config.dbPass}@localhost:27017`, (err, client) => { 
             this.userDB = client.db("atom").collection("users");
             this.guildDB = client.db("atom").collection("guilds");
-        });
+        });*/
     }
 }
 
