@@ -3,7 +3,7 @@ class Hoisted extends Command {
     constructor(bot) {
         super(bot, {
             name: 'hoisted',
-            description: 'Sets the specified role hoisted or not hoisted (if hoisted will set not hoisted and vice-versa)',
+            description: 'Sets the specified role hoisted or not hoisted, depending on its current state',
             category: '🔨 Moderation',
             aliases: ['hoist'],
             usage: 'hoisted <role name>'

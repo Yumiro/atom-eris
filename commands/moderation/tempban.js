@@ -4,7 +4,7 @@ class TempBan extends Command {
     constructor(bot) {
         super(bot, {
             name: 'tempban',
-            description: 'Temporarily bans a member in the guild',
+            description: 'Temporarily bans a member in the current server',
             category: '🔨 Moderation',
             aliases: ['tb', 'tempbean', 'temp-ban'],
             usage: 'tempban <user> <time> [reason]'

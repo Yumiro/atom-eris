@@ -3,7 +3,7 @@ class Ready {
         this.bot = bot
     }
     async run() {
-        this.bot.editStatus('online', { name: `over ${this.bot.guilds.size} guilds • ${this.bot.config.prefix}help `, type: 3 });
+        this.bot.editStatus('invisible', { name: `over ${this.bot.guilds.size} guilds • ${this.bot.config.prefix}help `, type: 3 });
         console.log('Successfully connected to Discord.');
         
         const wait = require('util').promisify(setTimeout);

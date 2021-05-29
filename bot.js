@@ -1,5 +1,8 @@
 const config = require('./config.json');
 const Client = require('./structures/Client');
+const {
+    Interaction
+} = require('slash-commands-discord');
 const bot = new Client(config.token);
 bot.kill = () => process.exit(0)
 const {
@@ -34,6 +37,108 @@ readdir('./commands', (err, folders) => {
             });
         });
     });
+});
+
+bot.on('rawWS', async (packet) => {
+    if (packet.t === "INTERACTION_CREATE") {
+        const data = packet.d;
+        const interaction = new Interaction(data, config.token, bot.user.id);
+        if (interaction.interaction.channel_id === '824716210758221835' && packet.d.data.custom_id === 'btn_1') {
+            interaction.reply('** **').then(interaction.replyDelete());
+            bot.guilds.find(f => f.id === '486518121604186112').channels.find(f => f.id === '824716210758221835').getMessage(packet.d.message.id).then(m => m.edit({
+                content: "** **",
+                components: [{
+                    type: 1,
+                    components: [{
+                        type: 2,
+                        style: 3,
+                        custom_id: "btn_1",
+                        label: " "
+                    }, {
+                        type: 2,
+                        style: packet.d.message.components[0].components[1].style,
+                        custom_id: "btn_2",
+                        label: packet.d.message.components[0].components[1].label
+                    }, {
+                        type: 2,
+                        style: packet.d.message.components[0].components[2].style,
+                        custom_id: "btn_3",
+                        label: packet.d.message.components[0].components[2].label
+                    }]
+                }]
+            }))
+        } else if (interaction.interaction.channel_id === '824716210758221835' && packet.d.data.custom_id === 'btn_2') {
+            interaction.reply('** **').then(interaction.replyDelete());
+            bot.guilds.find(f => f.id === '486518121604186112').channels.find(f => f.id === '824716210758221835').getMessage(packet.d.message.id).then(m => m.edit({
+                content: "** **",
+                components: [{
+                    type: 1,
+                    components: [{
+                        type: 2,
+                        style: packet.d.message.components[0].components[0].style,
+                        custom_id: "btn_1",
+                        label: packet.d.message.components[0].components[0].label
+                    }, {
+                        type: 2,
+                        style: 3,
+                        custom_id: "btn_2",
+                        label: " "
+                    }, {
+                        type: 2,
+                        style: packet.d.message.components[0].components[2].style,
+                        custom_id: "btn_3",
+                        label: packet.d.message.components[0].components[2].label
+                    }]
+                }]
+            }))
+        } else if (interaction.interaction.channel_id === '824716210758221835' && packet.d.data.custom_id === 'btn_3') {
+            interaction.reply('** **').then(interaction.replyDelete());
+            bot.guilds.find(f => f.id === '486518121604186112').channels.find(f => f.id === '824716210758221835').getMessage(packet.d.message.id).then(m => m.edit({
+                content: "** **",
+                components: [{
+                    type: 1,
+                    components: [{
+                        type: 2,
+                        style: packet.d.message.components[0].components[0].style,
+                        custom_id: "btn_1",
+                        label: packet.d.message.components[0].components[0].label
+                    }, {
+                        type: 2,
+                        style: packet.d.message.components[0].components[1].style,
+                        custom_id: "btn_2",
+                        label: packet.d.message.components[0].components[1].label
+                    }, {
+                        type: 2,
+                        style: 3,
+                        custom_id: "btn_3",
+                        label: " "
+                    }]
+                }]
+            }))
+            /*bot.guilds.find(f => f.id === '486518121604186112').channels.find(f => f.id === '824716210758221835').getMessage(packet.d.message.id).then(m => m.edit({
+                content: "** **",
+                components: [{
+                    type: 1,
+                    components: [{
+                        type: 2,
+                        style: 3,
+                        custom_id: "btn_1",
+                        label: "X"
+                    }, {
+                        type: 2,
+                        style: packet.d.message.components[0].components[1].style,
+                        custom_id: "btn_2",
+                        label: packet.d.message.components[0].components[1].label
+                    }, {
+                        type: 2,
+                        style: packet.d.message.components[0].components[2].style,
+                        custom_id: "btn_3",
+                        label: packet.d.message.components[0].components[2].label
+                    }]
+                }]
+            }))*/
+        }
+    }
 });
 
 bot.config = config;

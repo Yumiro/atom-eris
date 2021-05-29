@@ -4,7 +4,7 @@ class Unmute extends Command {
     constructor(bot) {
         super(bot, {
             name: 'unmute',
-            description: 'Unmutes a member in the guild',
+            description: 'Unmutes a member in the current server',
             category: '🔨 Moderation',
             aliases: ['um', 'unshut', 'unsilence'],
             usage: 'unmute <user> [reason]'

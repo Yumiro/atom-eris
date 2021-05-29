@@ -3,7 +3,7 @@ class Mentionable extends Command {
     constructor(bot) {
         super(bot, {
             name: 'mentionable',
-            description: 'Sets the specified role mentionable or not mentionable (if mentionable, will set not mentionable and vice-versa)',
+            description: 'Sets the specified role mentionable or not mentionable, depending on its current state',
             category: '🔨 Moderation',
             aliases: ['mention'],
             usage: 'mentionable <role name>'

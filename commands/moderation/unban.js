@@ -3,7 +3,7 @@ class Unban extends Command {
     constructor(bot) {
         super(bot, {
             name: 'unban',
-            description: 'Unbans a member from the guild',
+            description: 'Unbans a member from the current server',
             category: '🔨 Moderation',
             aliases: ['ub', 'unbean', 'unb'],
             usage: 'unban <user> [reason]'

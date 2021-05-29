@@ -3,7 +3,7 @@ class Ban extends Command {
     constructor(bot) {
         super(bot, {
             name: 'ban',
-            description: 'Bans a member in the guild',
+            description: 'Bans a member in the current server',
             category: '🔨 Moderation',
             aliases: ['b', 'bean'],
             usage: 'ban <user> [reason]'

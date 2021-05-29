@@ -3,7 +3,7 @@ class Kick extends Command {
     constructor(bot) {
         super(bot, {
             name: 'kick',
-            description: 'Kicks a member in the guild',
+            description: 'Kicks a member in the current server',
             category: '🔨 Moderation',
             aliases: ['k'],
             usage: 'kick <user> [reason]'

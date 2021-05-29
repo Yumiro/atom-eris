@@ -4,7 +4,7 @@ class tempMute extends Command {
     constructor(bot) {
         super(bot, {
             name: 'tempmute',
-            description: 'Temporarily mutes a member in the guild',
+            description: 'Temporarily mutes a member in the current server',
             category: '🔨 Moderation',
             aliases: ['tm', 'temp-mute', 'temp-shut', 'tempshut'],
             usage: 'tempmute <user> <time> [reason]'

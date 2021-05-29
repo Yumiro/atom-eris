@@ -3,7 +3,7 @@ class Mute extends Command {
     constructor(bot) {
         super(bot, {
             name: 'mute',
-            description: 'Mutes a member in the guild',
+            description: 'Mutes a member in the current server',
             category: '🔨 Moderation',
             aliases: ['m', 'shut', 'silence'],
             usage: 'mute <user> [reason]'

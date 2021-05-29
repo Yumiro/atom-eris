@@ -4,7 +4,7 @@ class guildCreate {
     }
     async run(guild) {
         console.log(`Bot joined ${guild.name}`);
-        const text = `Thanks for adding Atom. Use \`${this.bot.config.prefix}help\` to see a list of all available commands.`;
+        /*const text = `Thanks for adding Atom. Use \`${this.bot.config.prefix}help\` to see a list of all available commands.`;
 
         if (guild.members.get(this.bot.user.id).permission.has('sendMessages')) {
             this.bot.createMessage(guild.systemChannelID, {
@@ -28,7 +28,7 @@ class guildCreate {
                     description: text
                 }
             });
-        };
+        };*/
     }
 }
 

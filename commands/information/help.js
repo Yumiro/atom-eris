@@ -9,7 +9,7 @@ class Help extends Command {
             usage: 'help [command]'
         })
         this.run = async (msg, args) => {
-            if (!args[0]) {
+            if (!args[0] && msg.channel.type != 1) {
                 const embed = {
                     "embed": {
                         "title": 'Help',
@@ -40,7 +40,7 @@ class Help extends Command {
                 msg.channel.createMessage(embed);
             };
 
-            if (args[0]) {
+            if (args[0] && msg.channel.type != 1) {
                 let cmd = args[0];
 
                 if (this.bot.commands.has(cmd)) {

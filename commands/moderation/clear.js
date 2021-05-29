@@ -3,7 +3,7 @@ class Clear extends Command {
     constructor(bot) {
         super(bot, {
             name: 'clear',
-            description: 'Clears up to 100 messages in the channel',
+            description: 'Clears up to 100 messages in the current channel',
             category: '🔨 Moderation',
             aliases: ['clean', 'prune', 'purge'],
             usage: 'clear <number>'
