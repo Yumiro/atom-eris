@@ -4,8 +4,9 @@ const {
     Interaction
 } = require('slash-commands-discord');
 const bot = new Client(config.token, {
-    disableEveryone: false
-
+    allowedMentions: {
+        everyone: true
+    }
 });
 bot.kill = () => process.exit(0)
 const {
