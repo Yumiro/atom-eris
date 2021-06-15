@@ -3,9 +3,11 @@ const Client = require('./structures/Client');
 const {
     Interaction
 } = require('slash-commands-discord');
-const bot = new Client(config.token, { allowedMentions: {
-    everyone: true
-}});
+const bot = new Client(config.token, {
+    allowedMentions: {
+        everyone: true
+    }
+});
 bot.kill = () => process.exit(0)
 const {
     readdir
